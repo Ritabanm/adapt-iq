@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+data/adapt_iq_thumbnail.png
+data/adapt_iq_thumbnail_560x280.png
+data/adapt_iq_thumbnail_v2.png
+data/gallery_example_scenario.png
+data/gallery_cognitive_inertia.png

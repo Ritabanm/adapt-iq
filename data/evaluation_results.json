@@ -1,0 +1,1019 @@
+[
+  {
+    "scenario_id": "SC-003",
+    "domain": "Scientific Reasoning",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5580,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "pulsar|neutron star|natural|alternative explanation",
+        "rule out|hypothesis|distinguish|test",
+        "hydrogen|frequency|natural source"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "Certainly. Below is a detailed and actionable research plan to investigate the repeating radio signal detected every 37 seconds from deep space, with the hypothesis that it may originate from an intelligent extraterrestrial source.\n\n---\n\n## Research Plan: Investigation of a 37-Second Periodic Radio Signal from Deep Space\n\n### 1. Immediate Verification and Signal Characterization\n**Objective:** Confirm the signal\u2019s authenticity, source, and characteristics.\n\n- **1.1 Signal Confirmation**\n  - Coor...",
+    "phase2_response": "Thank you for the critical update. The identification of a newly discovered type of pulsar producing signals with exactly the observed 37-second periodicity, combined with the signal frequency matching known hydrogen emission lines, strongly suggests a plausible natural astrophysical origin. This fundamentally reshapes the investigative priorities and hypotheses.\n\n---\n\n## Revised Research Plan: Investigation of a 37-Second Periodic Radio Signal Matching Hydrogen Emission Lines and Pulsar Charact..."
+  },
+  {
+    "scenario_id": "SC-001",
+    "domain": "Scientific Reasoning",
+    "difficulty": "hard",
+    "composite_score": 0.7,
+    "adaptation_passed": true,
+    "non_perseveration_passed": false,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 1,
+    "phase2_response_length": 5237,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": false,
+      "criteria_matched": [
+        "geographic|region|rainfall|bias|confound",
+        "toxic|accumulate|3 year|soil|long-term",
+        "broader trial|delay|safety|monitor|not recommend"
+      ],
+      "failure_criteria_matched": [
+        "recommend nationwide adoption"
+      ],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "To move from initial promising data to a sound nationwide recommendation for the new fertilizer, the researcher needs to undertake a series of careful, methodical steps to validate, expand, and contextualize the findings. Here is a detailed, actionable plan:\n\n---\n\n### 1. **Review and Validate Initial Data**\n- **Verify Data Quality:**  \n  - Check the methodology used in the initial 3-farm study for biases, measurement errors, and confounding variables.  \n  - Confirm that the 25% yield increase is...",
+    "phase2_response": "Given the critical new information\u2014that the initial 3 farms were all located in an unusually wet region with rainfall much higher than the national average, and that the fertilizer contains a compound that accumulates in soil and becomes toxic after 3 years of use\u2014the research and recommendation plan must be substantially revised to address these serious concerns. Below is a detailed, updated plan that directly incorporates this new information.\n\n---\n\n## Key Changes from Previous Approach\n\n1. **..."
+  },
+  {
+    "scenario_id": "CP-001",
+    "domain": "Creative Problem Solving",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4713,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "alibi|another city|not the butler|frame|protect",
+        "new suspect|twist|subvert|pivot",
+        "clich\u00e9|trope|avoid|fresh"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "Certainly! Here is a detailed, actionable plan to write the next chapter where the detective interviews the butler, ensuring the chapter is engaging, advances the plot, and deepens character development:\n\n---\n\n### Chapter Outline: Detective Interviews the Butler\n\n**1. Setting the Scene**\n- Location: The interview takes place in the manor\u2019s study or the butler\u2019s quarters\u2014quiet, dimly lit, intimate.\n- Atmosphere: Tense but controlled, with subtle cues of underlying tension (e.g., the butler\u2019s clen...",
+    "phase2_response": "Understood. The new information fundamentally changes the approach to the chapter involving the butler and the murder investigation. Specifically:\n\n- The \"butler did it\" trope is now off-limits to avoid clich\u00e9s that could negatively impact the book\u2019s reception.\n- The butler has a solid alibi, having been verifiably out of town on the day of the murder, creating a plot hole if he is still portrayed as the killer.\n\n---\n\n### How This Changes the Previous Approach\n\n1. **Eliminate the Butler as the M..."
+  },
+  {
+    "scenario_id": "CP-004",
+    "domain": "Creative Problem Solving",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5333,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "reduce caffeine|natural|wellness|reposition|pivot",
+        "FDA|warning|safety|cardiac|study",
+        "campus|ban|re-entry|alternative"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "### Launch Strategy for High-Caffeine Energy Drink Targeting College Students\n\n---\n\n#### 1. **Market Research & Positioning**\n- **Understand the demographic:** College students aged 18-24, active on social media (Instagram, TikTok, YouTube), seeking energy boosts for study, workouts, and social activities.\n- **Competitor analysis:** Identify top energy drinks popular with this group (e.g., Red Bull, Bang, Monster) and analyze their marketing tactics, pricing, and flavor profiles.\n- **Unique Sell...",
+    "phase2_response": "### Revised Launch Strategy for High-Caffeine Energy Drink Targeting College Students  \n**(Considering recent cardiac risk study, potential FDA warning labels, and campus sales bans)**\n\n---\n\n## 1. **Directly Addressing the New Information**\n\n- **Health concerns:** The new study linking high-caffeine energy drinks (300mg/can) to cardiac events in young adults significantly raises health and regulatory risks.\n- **FDA actions:** Potential mandatory warning labels will impact product packaging, mark..."
+  },
+  {
+    "scenario_id": "EN-004",
+    "domain": "Engineering & Design",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5018,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "airless|puncture-proof|flat tire|twice per month",
+        "competitor|differentiate|pivot|redesign",
+        "weight|tradeoff|specification change"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "Certainly! Below is a detailed and comprehensive product specification for the new urban commuting bicycle you are designing, focusing on the lightweight aluminum frame, 21-speed gearing, and standard pneumatic tires.\n\n---\n\n## Product Specification: Urban Commuter Bicycle\n\n### 1. Frame\n\n- **Material:** High-quality 6061-T6 aluminum alloy  \n  - *Reason:* Offers an excellent strength-to-weight ratio, corrosion resistance, and affordability.  \n- **Weight:** Target frame weight approximately 1.5\u20131.7...",
+    "phase2_response": "Thank you for the critical update regarding the primary pain point of flat tires for urban commuters and the competitor\u2019s launch of an airless tire product. Addressing this issue is essential to differentiate our bicycle and improve customer satisfaction.\n\n---\n\n## Revised Product Specification: Urban Commuter Bicycle with Flat-Tire Mitigation\n\n### Key Change Summary\n\n- **Primary update:** Replace the standard pneumatic tires with **advanced airless tire technology** or highly puncture-resistant ..."
+  },
+  {
+    "scenario_id": "EN-001",
+    "domain": "Engineering & Design",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4846,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "seismic|Zone 4|base isolation|shear wall|moment frame",
+        "triple glaz|insulated|energy code|40%|heat loss",
+        "redesign|structural|facade"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "Certainly! Below is a comprehensive structural and environmental design plan for a 20-story office building featuring large glass facades and an open-plan interior in a temperate climate:\n\n---\n\n## 1. Structural Design Plan\n\n### 1.1. Structural System Selection\n- **Primary structure:** Use a reinforced concrete core combined with a steel frame structure.\n  - **Concrete core:** Houses elevators, stairs, and mechanical shafts; provides lateral stability against wind and seismic loads.\n  - **Steel f...",
+    "phase2_response": "Thank you for the critical update. The high seismic risk classification (Zone 4) and the new energy code requiring a 40% reduction in heat loss compared to the previous glass facade design significantly affect both structural and environmental strategies. Below is a fully revised, comprehensive plan explicitly addressing these new constraints.\n\n---\n\n# Revised Structural and Environmental Design Plan for 20-Story Office Building  \n### Site classified as high seismic risk (Zone 4)  \n### Energy cod..."
+  },
+  {
+    "scenario_id": "CD-001",
+    "domain": "Cross-Domain Adaptation",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4978,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "Traveling Salesman|logistics|graph|edge weight|network",
+        "ACO|ant colony optimization|algorithm|computer science",
+        "translate|apply|map|pheromone|optimization"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "Certainly! Here is a comprehensive summary of your research findings on ant pheromone trail optimization, along with an actionable plan to validate and extend your work:\n\n---\n\n### Research Findings: Ant Colony Pheromone Trail Optimization\n\n1. **Mathematical Model Development**\n\n   - **Model Basis:** Your model simulates the behavior of individual ants depositing pheromone on the ground as they forage, with pheromone intensity guiding subsequent ants.\n   - **Key Variables:** \n     - Pheromone dep...",
+    "phase2_response": "Certainly! Given the invitation to present at a computer science conference on your ant colony pheromone research as a solution to the Traveling Salesman Problem (TSP) in logistics networks, your approach must pivot from purely biological research to a focused, applied computational framework. You have 30 minutes for the presentation, so clarity, relevance, and impact are paramount.\n\n---\n\n## Revised Research Presentation & Action Plan for Computer Science Conference\n\n### Key Changes from Previou..."
+  },
+  {
+    "scenario_id": "CD-002",
+    "domain": "Cross-Domain Adaptation",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5745,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "supply-side|agricultural|food|climate|crop failure",
+        "70%|monetary ineffective|interest rate not working",
+        "import|diversif|adapt|supply chain"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "### Context and Considerations\nIn a developing country, inflation dynamics can be influenced by a mix of factors including supply-side constraints, exchange rate volatility, fiscal deficits, and monetary policy settings. Monetary policy tools such as interest rates and money supply management are crucial but must be deployed carefully to avoid stalling growth or worsening unemployment.\n\n### Step 1: Diagnose the Inflation Drivers\nBefore issuing recommendations, confirm the primary inflation drive...",
+    "phase2_response": "### Updated Economic Analysis and Policy Recommendation in Light of New Information\n\n---\n\n## New Key Insight:\n- **70% of inflation is caused by supply chain disruptions linked to climate-related crop failures.**\n- **Monetary policy tightening (5 interest rate hikes) has not curbed inflation.**\n\n---\n\n## Implications of the New Information\n\n1. **Monetary policy tools (interest rate hikes, money supply control) have limited effectiveness** against inflation driven primarily by supply shocks rather ..."
+  },
+  {
+    "scenario_id": "RM-001",
+    "domain": "Resource Management",
+    "difficulty": "medium",
+    "composite_score": 0.7,
+    "adaptation_passed": true,
+    "non_perseveration_passed": false,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 1,
+    "phase2_response_length": 5126,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": false,
+      "criteria_matched": [
+        "contamina",
+        "36%|effective capacity|usable water",
+        "emergency|alternative source|truck|desalinat"
+      ],
+      "failure_criteria_matched": [
+        "60% capacity"
+      ],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "### Water Conservation Plan for City of 500,000 Residents Facing 3-Month Drought\n\n---\n\n#### **Current Situation:**\n- Reservoir at 60% capacity\n- Forecasted drought for next 3 months\n- Population: 500,000 residents\n\n---\n\n### Objectives:\n1. **Extend water supply to last through drought period**\n2. **Reduce overall water consumption by at least 30-40%**\n3. **Maintain essential water services (health, sanitation, fire safety)**\n4. **Raise public awareness and ensure compliance**\n\n---\n\n### Step 1: As...",
+    "phase2_response": "### Updated Water Conservation Plan for City of 500,000 Residents Facing 3-Month Drought **with Chemical Spill Contamination**\n\n---\n\n#### **New Critical Situation:**\n- Reservoir at 60% capacity, but **40% of reservoir volume is chemically contaminated and unusable** for drinking or agriculture.\n- Effectively, only 60% of the 60% reservoir capacity is available \u2192 **36% usable reservoir capacity**.\n- Drought forecast for next 3 months remains unchanged.\n- Population: 500,000 residents.\n\n---\n\n### I..."
+  },
+  {
+    "scenario_id": "RM-003",
+    "domain": "Resource Management",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4511,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "overflow|surge|field hospital|transfer",
+        "agency|recruit|retired|emergency staff",
+        "PPE|isolation|quarantine protocol"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "Certainly! Below is a detailed, actionable staffing plan for the next month for your 200-bed hospital operating at a normal occupancy of 75%.\n\n---\n\n### 1. **Assess Current Situation**\n\n- **Total beds:** 200\n- **Average occupancy:** 75% of 200 = 150 beds occupied\n- **Patient volume to staff for:** Approximately 150 inpatients daily\n- **Time frame:** Next 30 days (one month)\n- **Hospital units:** Assume typical departments (e.g., Medical/Surgical, ICU, ER, Obstetrics, Pediatrics, Ancillary Service...",
+    "phase2_response": "Thank you for the critical update. The new information dramatically changes the staffing needs and operational approach. Here's a detailed, revised staffing plan addressing the outbreak, increased occupancy, and reduced nursing workforce due to quarantine.\n\n---\n\n## Summary of New Constraints & Impact\n\n| Factor                          | Previous Plan                    | New Situation                          |\n|--------------------------------|--------------------------------|------------------..."
+  },
+  {
+    "scenario_id": "SD-002",
+    "domain": "Social Dynamics",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5096,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "hybrid|remote-first|flexible|optional",
+        "65%|retention|resign|competitor",
+        "policy change|revise|reconsider"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "Certainly! Below is a detailed, actionable transition plan for designing and implementing a return-to-office (RTO) policy for a company of 500 employees who have been working remotely for 2 years.\n\n---\n\n### Return-to-Office Transition Plan\n\n#### 1. **Assessment & Data Gathering (Weeks 1-2)**\n\n- **Employee Survey:**  \n  - Conduct a detailed survey to understand employee preferences, concerns, commuting situations, home office setups, and productivity perceptions.  \n  - Questions to cover: preferr...",
+    "phase2_response": "Thank you for the critical update. Given that **65% of employees would resign if forced to return full-time in office**, and that **our top competitor has announced a permanent remote-first policy**, the original plan focused on a return-to-office or hybrid model must be fundamentally revised. The risk of massive attrition and loss of competitive talent is too high.  \n\n---\n\n## Revised Return-to-Office Transition Plan: Remote-First with Flexible In-Office Options\n\n### Key Changes from Previous Pl..."
+  },
+  {
+    "scenario_id": "SD-001",
+    "domain": "Social Dynamics",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5766,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "trust|breach|secret diversion|30%",
+        "monitor|verify|independent|oversight",
+        "rebuild|acknowledge|grievance|transparency"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-mini",
+    "phase1_response": "Certainly. Below is a detailed and actionable negotiation framework tailored for Country A (upstream) and Country B (downstream) to establish a fair and sustainable water-sharing agreement for their shared river.\n\n---\n\n### Water-Sharing Negotiation Framework for Country A (Upstream) and Country B (Downstream)\n\n---\n\n#### 1. **Preparation Phase**\n\n**a. Stakeholder Identification and Engagement**  \n- Identify all relevant stakeholders from both countries: government agencies (water resources, envir...",
+    "phase2_response": "Thank you for the critical update. The revelation that Country A has been secretly diverting 30% more water than preliminarily agreed fundamentally alters the negotiation dynamics, trust levels, and the framework design. The negotiation framework must be urgently revised to explicitly address this serious breach of trust, prevent collapse, and restore a foundation for constructive dialogue.\n\n---\n\n## Revised Water-Sharing Negotiation Framework Incorporating Breach of Trust\n\n---\n\n### 1. **Immediat..."
+  },
+  {
+    "scenario_id": "SC-003",
+    "domain": "Scientific Reasoning",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5177,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "pulsar|neutron star|natural|alternative explanation",
+        "rule out|hypothesis|distinguish|test",
+        "hydrogen|frequency|natural source"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly. Detecting a repeating radio signal from deep space that occurs every 37 seconds is a groundbreaking event requiring a systematic, multi-phase research plan. Here is a comprehensive, actionable plan:\n\n---\n\n### **Phase 1: Immediate Verification and Confirmation**\n\n**Objective:** Confirm the authenticity and astrophysical origin of the signal, ruling out terrestrial interference or instrumental artifacts.\n\n**Actions:**\n\n1. **Repeat Observations:**\n   - Schedule immediate follow-up observ...",
+    "phase2_response": "Thank you for the critical update. The recognition that a newly discovered pulsar type can produce signals with a 37-second period, combined with the fact that the signal's frequency matches hydrogen emission lines, significantly shifts the investigative approach. This new information suggests a natural origin is highly plausible, reducing the likelihood of an artificial signal. \n\n**Revised Research Plan:**\n\n---\n\n### **Overall Objective:**\nDetermine whether the detected signal is naturally produ..."
+  },
+  {
+    "scenario_id": "SC-001",
+    "domain": "Scientific Reasoning",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5179,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "geographic|region|rainfall|bias|confound",
+        "toxic|accumulate|3 year|soil|long-term",
+        "broader trial|delay|safety|monitor|not recommend"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Given the scenario where initial data from 3 farms indicates a 25% average yield increase with the new fertilizer, the researcher should proceed with a structured, multi-phase plan to validate these findings, ensure reliability, and facilitate informed recommendations for nationwide adoption. Here is a detailed, actionable plan:\n\n---\n\n### **Phase 1: Data Verification and Initial Analysis**\n\n1. **Review Raw Data:**\n   - Ensure data accuracy by verifying measurements, sampling methods, and recordi...",
+    "phase2_response": "Thank you for the critical update. The new information fundamentally alters the risk-benefit assessment and the validity of prior conclusions. Specifically:\n\n- **All initial data came from an atypical, unusually wet region**, which may have artificially inflated or skewed yield results.\n- **Regional rainfall is 40% lower nationally**, indicating the initial conditions are not representative.\n- **The fertilizer contains a soil-accumulating compound that becomes toxic after 3 years**, raising seri..."
+  },
+  {
+    "scenario_id": "CP-001",
+    "domain": "Creative Problem Solving",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4525,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "alibi|another city|not the butler|frame|protect",
+        "new suspect|twist|subvert|pivot",
+        "clich\u00e9|trope|avoid|fresh"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly! Here is a detailed, actionable plan for writing the next chapter where the detective interviews the butler, ensuring it advances the thriller plot effectively:\n\n---\n\n### Step 1: Establish the Scene\n- **Setting:** Choose an evocative location within the estate \u2014 e.g., the butler\u2019s quarters, the library, or a formal sitting room.\n- **Atmosphere:** Create a tense, suspenseful mood. Use descriptive language to reflect the small town\u2019s quiet but ominous tone, and the detective\u2019s focused de...",
+    "phase2_response": "Certainly! Given the new constraints\u2014that the \"butler did it\" trope is a clich\u00e9 and that the butler was provably elsewhere during the murder\u2014here is a revised, comprehensive plan for the next chapter where the detective interviews the butler. This plan will help avoid clich\u00e9s, address the plot hole, and maintain suspense and realism.\n\n---\n\n## Revised Approach and Strategy\n\n### 1. **Shift the Narrative Focus Away from the Butler as the Culprit**\n- **Reasoning:** The butler cannot be the murderer ..."
+  },
+  {
+    "scenario_id": "CP-004",
+    "domain": "Creative Problem Solving",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5127,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "reduce caffeine|natural|wellness|reposition|pivot",
+        "FDA|warning|safety|cardiac|study",
+        "campus|ban|re-entry|alternative"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly! Here is a comprehensive, actionable launch strategy for your new energy drink targeting college students, emphasizing high caffeine content (300mg per can) and leveraging social media influencers.\n\n---\n\n### 1. **Market Research & Positioning**\n- **Identify Key Demographics:** Focus on college students aged 18-24, active on platforms like TikTok, Instagram, Snapchat, and YouTube.\n- **Competitor Analysis:** Study existing energy drinks targeted at students (e.g., Bang, C4, Monster) to i...",
+    "phase2_response": "Given the recent study linking high-caffeine energy drinks to cardiac events in young adults, along with the bans on such drinks at three universities, it is crucial to revise your launch strategy to prioritize safety, legal compliance, and responsible marketing. Here's a detailed, actionable, and ethically sound revised plan:\n\n---\n\n## 1. **Reassess Product Positioning & Messaging**\n- **Shift Focus from High Caffeine Content:** Instead of emphasizing 300mg caffeine per can, reposition the produc..."
+  },
+  {
+    "scenario_id": "EN-004",
+    "domain": "Engineering & Design",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5085,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "airless|puncture-proof|flat tire|twice per month",
+        "competitor|differentiate|pivot|redesign",
+        "weight|tradeoff|specification change"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly! Here's a comprehensive and detailed product specification for the urban commuting bicycle based on your outlined focus:\n\n---\n\n### **Urban Commuter Bicycle \u2013 Product Specification**\n\n#### 1. **Frame and Materials**\n- **Material:** Aluminum alloy (e.g., 6061 or 7005 series)\n- **Frame Type:** Step-through or diamond frame (based on target user preference)\n- **Frame Size Options:** \n  - Small: 48 cm (for riders 5\u20192\u201d\u20135\u20196\u201d)\n  - Medium: 54 cm (for riders 5\u20197\u201d\u20135\u201910\u201d)\n  - Large: 58 cm (for rid...",
+    "phase2_response": "Certainly. The new market insight\u2014that urban commuters frequently experience flat tires (~2x/month)\u2014and the competitor\u2019s launch of airless tires fundamentally shifts the focus of the bicycle design. To address this pain point effectively within the original framework, I will revise the product specification by integrating flat-resistance features, especially focusing on tire technology, while maintaining the lightweight, 21-speed, aluminum urban bike design.\n\n---\n\n# **Revised Urban Commuter Bicy..."
+  },
+  {
+    "scenario_id": "EN-001",
+    "domain": "Engineering & Design",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4772,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "seismic|Zone 4|base isolation|shear wall|moment frame",
+        "triple glaz|insulated|energy code|40%|heat loss",
+        "redesign|structural|facade"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly. Here's a detailed, comprehensive structural and environmental design plan for a 20-story office building in a temperate climate, featuring large glass facades and an open-plan interior.\n\n---\n\n## 1. Structural Design Plan\n\n### a. Foundation and Substructure\n- **Type:** Deep foundation system, such as piled foundations or mat slabs, suitable for urban settings and to support the building's height and load.\n- **Materials:** Reinforced concrete piles with high load-bearing capacity.\n- **D...",
+    "phase2_response": "Certainly. Given the new high seismic risk (Zone 4) classification and the requirement for a 40% reduction in heat loss, I will revise the previous structural and environmental plan accordingly. The goal is to enhance seismic resilience and improve thermal performance while maintaining the building\u2019s functionality and aesthetic qualities.\n\n---\n\n## Revised Structural and Environmental Design Plan\n\n### 1. Structural Design Revisions for High Seismic Zone (Zone 4)\n\n**a. Foundation and Substructure*..."
+  },
+  {
+    "scenario_id": "CD-001",
+    "domain": "Cross-Domain Adaptation",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4578,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "Traveling Salesman|logistics|graph|edge weight|network",
+        "ACO|ant colony optimization|algorithm|computer science",
+        "translate|apply|map|pheromone|optimization"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly. Based on your scenario, I will outline a comprehensive research report summarizing your findings on how ant colonies optimize foraging routes via pheromone trail dynamics, along with actionable insights and potential applications.\n\n---\n\n### Research Findings on Ant Pheromone Trail Optimization\n\n#### 1. **Overview of the Model**\nYour mathematical model captures the core dynamics of ant foraging behavior, emphasizing the following components:\n- **Pheromone deposition:** Ants deposit phe...",
+    "phase2_response": "Certainly. Given the new context\u2014presenting your biological research as a solution to the Traveling Salesman Problem (TSP) in logistics networks at a computer science conference within a 30-minute timeframe\u2014I will adapt your previous findings into an effective, clear, computer-science-oriented algorithm inspired by ant pheromone trail optimization.\n\n---\n\n### **Revised Research Presentation Plan: Ant Colony Optimization for TSP in Logistics**\n\n---\n\n#### **1. Context and Objective**\n\n- **Problem A..."
+  },
+  {
+    "scenario_id": "CD-002",
+    "domain": "Cross-Domain Adaptation",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5477,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "supply-side|agricultural|food|climate|crop failure",
+        "70%|monetary ineffective|interest rate not working",
+        "import|diversif|adapt|supply chain"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "To develop an effective policy recommendation for controlling inflation in a developing country using standard monetary policy tools\u2014interest rates and money supply\u2014it is essential to adopt a structured, multi-faceted approach. Below is a comprehensive, actionable plan:\n\n---\n\n### 1. **Assess Current Economic Conditions**\n   - **Inflation Rate & Trends:** Gather recent data on inflation levels, identify if inflation is accelerating, stable, or decelerating.\n   - **Money Supply & Velocity:** Analy...",
+    "phase2_response": "Given the new information that **70% of inflation is driven by supply chain disruptions caused by climate-related crop failures**, and that **prior monetary tightening has already been implemented with no effect**, it is clear that traditional monetary policy tools are insufficient to address the primary inflation drivers. \n\n**Therefore, the revised policy approach must shift from predominantly monetary measures to a more holistic strategy that directly tackles supply-side issues, mitigates clim..."
+  },
+  {
+    "scenario_id": "RM-001",
+    "domain": "Resource Management",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5077,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "contamina",
+        "36%|effective capacity|usable water",
+        "emergency|alternative source|truck|desalinat"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "**Water Conservation Plan for City of 500,000 Residents During a 3-Month Drought**\n\n---\n\n### **Objectives:**\n- Reduce water consumption by at least 30% during the drought period.\n- Preserve reservoir capacity and ensure equitable distribution.\n- Engage and educate residents to foster compliance and community participation.\n- Maintain essential water services and sanitation standards.\n\n---\n\n### **Step 1: Immediate Assessment & Communication (Week 1)**\n\n**Actions:**\n- **Data Collection:** Analyze ...",
+    "phase2_response": "**Revised Water Conservation and Management Plan for City of 500,000 Residents During a 3-Month Drought with Upstream Chemical Spill Contaminating 40% of Reservoir**\n\n---\n\n### **Critical New Context:**\n- **Reservoir Capacity:** 60% initially.\n- **Contamination:** 40% of reservoir water is unsafe for drinking and irrigation.\n- **Available Usable Water:** Effectively only 36% of total reservoir capacity remains safe (60% * 60% = 36%).\n- **Implication:** The city\u2019s water supply is severely compromi..."
+  },
+  {
+    "scenario_id": "RM-003",
+    "domain": "Resource Management",
+    "difficulty": "hard",
+    "composite_score": 0.7,
+    "adaptation_passed": true,
+    "non_perseveration_passed": false,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 1,
+    "phase2_response_length": 4396,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": false,
+      "criteria_matched": [
+        "overflow|surge|field hospital|transfer",
+        "agency|recruit|retired|emergency staff",
+        "PPE|isolation|quarantine protocol"
+      ],
+      "failure_criteria_matched": [
+        "original staffing plan"
+      ],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly! To develop a comprehensive staffing plan for a 200-bed hospital with a normal occupancy of 75%, I will systematically analyze and outline the necessary steps, assumptions, and actionable components.\n\n---\n\n### Step 1: Calculate Expected Patient Census and Bed Utilization\n- **Total beds:** 200\n- **Normal occupancy rate:** 75%\n- **Average daily patient census:**  \n  \\( 200 \\text{ beds} \\times 0.75 = 150 \\text{ patients} \\)\n\n**Implication:** On average, 150 beds are occupied daily.\n\n---\n\n...",
+    "phase2_response": "Certainly. The outbreak and hospital designation as the primary treatment center significantly impact staffing needs and operational capacity. Here is a detailed, actionable revised plan addressing the new constraints:\n\n---\n\n## **1. Critical Situation Summary**\n\n- **Expected occupancy increase:** from 75% (150 patients) to **140%** of capacity  \n  \\( 200 \\text{ beds} \\times 1.4 = 280 \\text{ patients} \\)  \n  **Note:** Since only 200 beds are available, this indicates a surge capacity requirement,..."
+  },
+  {
+    "scenario_id": "SD-002",
+    "domain": "Social Dynamics",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4999,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "hybrid|remote-first|flexible|optional",
+        "65%|retention|resign|competitor",
+        "policy change|revise|reconsider"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly. Developing a structured, transparent, and flexible return-to-office (RTO) transition plan is essential for ensuring a smooth transition for your 500 employees after two years of remote work. Below is a comprehensive, step-by-step transition plan that addresses communication, logistics, policies, and employee well-being.\n\n---\n\n### **1. Pre-Planning Phase (Weeks 1-2)**\n\n**Goals:**\n- Gather employee feedback\n- Assess organizational needs\n- Align leadership expectations\n\n**Actions:**\n- **...",
+    "phase2_response": "Given the alarming survey result\u201465% of employees will resign if forced to return full-time\u2014and the competitor\u2019s announcement of a permanent remote-first policy, it\u2019s clear that a traditional return-to-office plan is unsustainable and likely to cause significant talent loss. To navigate this challenge effectively, the revised plan must prioritize flexibility, employee retention, and adapting to the remote-first landscape, while still maintaining organizational cohesion.\n\n---\n\n# **Revised Transit..."
+  },
+  {
+    "scenario_id": "SD-001",
+    "domain": "Social Dynamics",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5591,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "trust|breach|secret diversion|30%",
+        "monitor|verify|independent|oversight",
+        "rebuild|acknowledge|grievance|transparency"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "GPT-4.1-nano",
+    "phase1_response": "Certainly. Designing an effective negotiation framework for a water-sharing agreement between Country A (upstream) and Country B (downstream) requires a structured, multi-phase approach that promotes transparency, fairness, and sustainable cooperation. Below is a detailed, actionable plan comprising preparatory steps, negotiation phases, and implementation mechanisms.\n\n---\n\n### **I. Preparatory Phase**\n\n**1. Data Collection & Assessment**\n- **Hydrological Data:** Collect comprehensive data on ri...",
+    "phase2_response": "Given the revelation that Country A has secretly diverted 30% more water than previously agreed, the negotiation framework must be urgently recalibrated to address trust breaches, ensure accountability, and restore a cooperative path forward. The core principles now shift to emphasizing transparency, verification, and enforceability, while maintaining progress toward a sustainable and equitable water-sharing arrangement.\n\n---\n\n## **Revised Negotiation Framework in Light of New Information**\n\n###..."
+  },
+  {
+    "scenario_id": "SC-003",
+    "domain": "Scientific Reasoning",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5050,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "pulsar|neutron star|natural|alternative explanation",
+        "rule out|hypothesis|distinguish|test",
+        "hydrogen|frequency|natural source"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "## Research Plan: Investigating the \"37-Second Signal\"\n\nThis scenario presents an extraordinary opportunity and requires a methodical, multi-faceted approach. Our primary goals are to confirm the signal's extraterrestrial and artificial origin, characterize its properties, and attempt to decipher its potential meaning. This plan is structured in phases, allowing for adaptation as new data emerges.\n\n### Phase 1: Immediate Confirmation and Basic Characterization (0-72 hours)\n\nThe immediate priorit...",
+    "phase2_response": "## Revised Research Plan: Investigating the \"37-Second Signal\" (Post-Pulsar/Hydrogen Line Update)\n\nThe new information regarding the potential for a newly discovered type of pulsar to produce a 37-second periodicity and the signal's frequency matching hydrogen emission lines is *critically important*. This significantly shifts our initial assumptions and necessitates a fundamental re-evaluation of the research plan. Our primary goal now becomes *rigorously distinguishing between a natural astrop..."
+  },
+  {
+    "scenario_id": "SC-001",
+    "domain": "Scientific Reasoning",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5108,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "geographic|region|rainfall|bias|confound",
+        "toxic|accumulate|3 year|soil|long-term",
+        "broader trial|delay|safety|monitor|not recommend"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "This is an interesting scenario with significant implications. Recommending nationwide adoption based on data from only three farms, even with a promising 25% yield increase, is premature and carries substantial risks. A detailed, actionable plan is crucial to ensure the fertilizer's efficacy, safety, and economic viability before widespread implementation.\n\nHere's a comprehensive, actionable plan outlining the necessary next steps:\n\n## Detailed Actionable Plan for Fertilizer Recommendation\n\nThe...",
+    "phase2_response": "This is indeed critical new information that fundamentally alters the assessment and the path forward. My previous plan, while comprehensive for a general scenario, is now largely insufficient and potentially dangerous if followed without significant modification.\n\nHere's a revised, comprehensive plan that directly addresses the new constraints and outlines a responsible approach.\n\n---\n\n## Revised Actionable Plan for Fertilizer Recommendation\n\nThe new information reveals two major, interconnecte..."
+  },
+  {
+    "scenario_id": "CP-001",
+    "domain": "Creative Problem Solving",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4334,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "alibi|another city|not the butler|frame|protect",
+        "new suspect|twist|subvert|pivot",
+        "clich\u00e9|trope|avoid|fresh"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Okay, this is a fantastic scenario! As a novelist, I'm excited to dive into this. My goal is to write a compelling interview scene that raises suspicion, subtly reveals character, and moves the plot forward without giving everything away just yet.\n\nHere's my detailed, actionable plan for writing the next chapter, focusing on the detective's interview with the butler:\n\n---\n\n## Novelist's Plan: Chapter Outline & Interview Strategy\n\n**Chapter Title Idea:** \"The Stain of Silver\" or \"A Matter of Rout...",
+    "phase2_response": "Okay, this is a **critical and excellent update** from the editor! It completely changes the landscape of the mystery and forces a much more interesting narrative path. The \"butler did it\" trope is indeed overdone, and the plot hole about his alibi is a game-changer. My previous plan is now entirely obsolete for the core mystery, though some elements of character interaction can still be salvaged.\n\n---\n\n## Revised Novelist's Plan: Adapting to New Constraints\n\n**1. Directly Addressing the New Inf..."
+  },
+  {
+    "scenario_id": "CP-004",
+    "domain": "Creative Problem Solving",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4619,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "reduce caffeine|natural|wellness|reposition|pivot",
+        "FDA|warning|safety|cardiac|study",
+        "campus|ban|re-entry|alternative"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Here's a detailed and actionable launch strategy for your new energy drink, \"Volt,\" targeting college students, with a strong emphasis on social media influencers and high caffeine content (300mg per can).\n\n## Volt: High-Voltage Fuel for College Life\n\n**Product Name:** Volt (or a similarly energetic, concise name)\n\n**Slogan:** \"Volt: Power Through Your Grind.\" / \"Volt: Unleash Your Potential.\" / \"Volt: Your Study. Amplified.\" (Choose one that resonates most)\n\n**Core Message:** Volt provides the ...",
+    "phase2_response": "This is a critical and potentially devastating development for Volt. The previous strategy, heavily reliant on high caffeine content as a primary differentiator, is no longer viable and carries significant legal, ethical, and reputational risks.\n\nMy revised plan directly addresses these new constraints and pivots Volt's strategy to navigate this challenging environment.\n\n---\n\n## Volt: Revised Strategy - Navigating New Challenges\n\n**Core Problem:** The previous core differentiator (300mg caffeine..."
+  },
+  {
+    "scenario_id": "EN-004",
+    "domain": "Engineering & Design",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4820,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "airless|puncture-proof|flat tire|twice per month",
+        "competitor|differentiate|pivot|redesign",
+        "weight|tradeoff|specification change"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Here's a detailed and comprehensive product specification for your urban commuting bicycle, designed with an aluminum frame, 21-speed gearing, and standard pneumatic tires.\n\n---\n\n## Product Specification: Urban Commuter Bicycle (Model: CityGlide 1.0)\n\n**Version:** 1.0\n**Date:** October 26, 2023\n**Prepared By:** [Your Name/Company Name]\n\n---\n\n### 1. Product Overview\n\nThe CityGlide 1.0 is a lightweight, efficient, and durable bicycle designed specifically for urban commuting. It aims to provide a ...",
+    "phase2_response": "## IMPORTANT REVISION: Addressing the Flat Tire Pain Point and Competitor Airless Tires\n\nThis new information is absolutely critical and fundamentally changes the design priorities and market positioning of the CityGlide 1.0. The previous specification, while solid, now falls short of addressing the most significant pain point for our target market and fails to account for a direct competitor threat.\n\n### 1. Direct Address of New Information\n\nThe market research indicating an average of two flat..."
+  },
+  {
+    "scenario_id": "EN-001",
+    "domain": "Engineering & Design",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5102,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "seismic|Zone 4|base isolation|shear wall|moment frame",
+        "triple glaz|insulated|energy code|40%|heat loss",
+        "redesign|structural|facade"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Here's a detailed, actionable structural and environmental design plan for your 20-story office building with large glass facades and an open-plan interior in a temperate climate.\n\n## Structural Design Plan\n\nThe open-plan interior and large glass facades present specific structural challenges related to lateral stability, floor vibration, and facade integration.\n\n**1. Structural System Selection:**\n\n*   **Primary System (Gravity & Lateral):**\n    *   **Option A (Recommended): Concrete Shear Wall...",
+    "phase2_response": "## Revised Structural and Environmental Design Plan: Addressing High Seismic Risk and Enhanced Energy Codes\n\nThis revised plan directly addresses the critical new information: **high seismic risk (Zone 4)** and a **40% reduction in heat loss** requirement for the glass facade. My previous approach was suitable for a general temperate climate but needs significant adjustments to meet these stringent new constraints.\n\n---\n\n### **Summary of Key Changes from Previous Plan:**\n\n1.  **Structural System..."
+  },
+  {
+    "scenario_id": "CD-001",
+    "domain": "Cross-Domain Adaptation",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4798,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "Traveling Salesman|logistics|graph|edge weight|network",
+        "ACO|ant colony optimization|algorithm|computer science",
+        "translate|apply|map|pheromone|optimization"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Okay, this is an exciting scenario! As a biologist who has developed a mathematical model for ant pheromone trail optimization, I'm eager to share my research findings. My goal is to not only present these findings but also to outline the implications and future directions of this work.\n\nHere's a comprehensive and actionable description of my research findings, designed to be specific and directly responsive to the prompt:\n\n---\n\n## Research Findings: Optimizing Ant Foraging Routes Through Pherom...",
+    "phase2_response": "This is an exciting and challenging pivot! The invitation to a computer science conference to present my ant foraging model as a solution to the Traveling Salesman Problem (TSP) in logistics networks completely recontextualizes my previous response. My primary goal now is to translate biological principles into computational algorithms and demonstrate their practical applicability.\n\nHere's my revised, comprehensive plan, directly addressing the new constraints:\n\n---\n\n## Revised Plan: Ant Colony ..."
+  },
+  {
+    "scenario_id": "CD-002",
+    "domain": "Cross-Domain Adaptation",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 5228,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "supply-side|agricultural|food|climate|crop failure",
+        "70%|monetary ineffective|interest rate not working",
+        "import|diversif|adapt|supply chain"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Here's a detailed and actionable policy recommendation for a developing country facing inflation, utilizing standard monetary policy tools. This recommendation assumes a relatively stable political environment and a central bank with a degree of independence.\n\n## Policy Recommendation: Addressing Inflation in a Developing Country\n\n**Objective:** To bring inflation down to a sustainable and targetable level (e.g., 3-5%) while minimizing adverse impacts on economic growth and employment.\n\n**Curren...",
+    "phase2_response": "## IMPORTANT REVISED POLICY RECOMMENDATION: Addressing Inflation in a Developing Country (Updated)\n\n**Objective:** To mitigate the impact of supply-side driven inflation, support affected populations, and build resilience against future climate-related shocks, while maintaining macroeconomic stability.\n\n**Revised Core Problem:** The inflation problem is now understood to be predominantly a **supply-side shock (70% climate-related crop failures)**, not primarily a demand-side or monetary phenomen..."
+  },
+  {
+    "scenario_id": "RM-001",
+    "domain": "Resource Management",
+    "difficulty": "medium",
+    "composite_score": 0.7,
+    "adaptation_passed": true,
+    "non_perseveration_passed": false,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 1,
+    "phase2_response_length": 4734,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": false,
+      "criteria_matched": [
+        "contamina",
+        "36%|effective capacity|usable water",
+        "emergency|alternative source|truck|desalinat"
+      ],
+      "failure_criteria_matched": [
+        "60% capacity"
+      ],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Given the critical situation of a looming three-month drought and the reservoir at 60% capacity for a city of 500,000 residents, a proactive, multi-faceted, and community-wide water conservation plan is essential. My plan will focus on immediate, short-term actions to mitigate the drought's impact and lay the groundwork for long-term water resilience.\n\nHere's a detailed, actionable water conservation plan:\n\n---\n\n## City of [City Name] Drought Response & Water Conservation Plan\n\n**Goal:** Reduce ...",
+    "phase2_response": "The new information regarding the chemical spill upstream, contaminating 40% of the reservoir and rendering it unusable for drinking or agriculture, is a *catastrophic* development. This fundamentally changes the entire premise of the water supply challenge. Our effective usable capacity has plummeted from 60% to **20%** (60% - 40% contaminated). This is no longer just a drought conservation scenario; it's an immediate water crisis requiring emergency measures.\n\nMy previous plan was based on a p..."
+  },
+  {
+    "scenario_id": "RM-003",
+    "domain": "Resource Management",
+    "difficulty": "hard",
+    "composite_score": 0.5333,
+    "adaptation_passed": true,
+    "non_perseveration_passed": false,
+    "context_acknowledged": true,
+    "success_criteria_matched": 2,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 1,
+    "phase2_response_length": 4585,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": false,
+      "criteria_matched": [
+        "overflow|surge|field hospital|transfer",
+        "PPE|isolation|quarantine protocol"
+      ],
+      "failure_criteria_matched": [
+        "75% occupancy"
+      ],
+      "success_criteria_count": 2,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Okay, I understand the scenario. As a hospital administrator, my primary goal is to ensure optimal patient care, maintain staff well-being, and manage hospital resources efficiently. A comprehensive staffing plan for a 200-bed hospital with a normal occupancy of 75% for the next month requires a multi-faceted approach.\n\nHere's a detailed, actionable plan:\n\n---\n\n## Staffing Plan for a 200-Bed Hospital (75% Normal Occupancy) - Next Month\n\n**Hospital Overview:**\n\n*   **Total Beds:** 200\n*   **Norma...",
+    "phase2_response": "Okay, this is a critical and rapidly evolving situation. The previous plan, while comprehensive for normal operations, is now largely obsolete due to the unprecedented challenges presented by the novel respiratory illness outbreak. My revised approach must prioritize immediate crisis management, rapid adaptation, and resource mobilization.\n\n---\n\n## REVISED STAFFING PLAN: HOSPITAL AS PRIMARY TREATMENT CENTER FOR NOVEL RESPIRATORY ILLNESS OUTBREAK\n\n**Hospital Overview (Updated):**\n\n*   **Total Bed..."
+  },
+  {
+    "scenario_id": "SD-002",
+    "domain": "Social Dynamics",
+    "difficulty": "medium",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4580,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "hybrid|remote-first|flexible|optional",
+        "65%|retention|resign|competitor",
+        "policy change|revise|reconsider"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "Okay, this is a significant undertaking, and a successful return-to-office (RTO) policy for 500 employees who have been remote for two years requires a thoughtful, phased, and empathetic approach. As the HR Manager, my goal is to minimize disruption, maintain productivity, retain talent, and foster a positive work environment.\n\nHere's a detailed, actionable transition plan:\n\n---\n\n## Return-to-Office Transition Plan: \"Evolve & Connect\"\n\n**Company Size:** 500 Employees\n**Current State:** 2 Years R...",
+    "phase2_response": "Okay, this new information fundamentally changes the landscape and requires a complete re-evaluation and significant pivot from the initial plan. The threat of 65% attrition is catastrophic, and a direct competitor offering permanent remote-first status creates a powerful alternative for our talent.\n\nMy previous approach, while flexible, still assumed a baseline *return* to the office as the primary model. This is no longer viable.\n\n---\n\n## REVISED Return-to-Office Transition Plan: \"Flex-First &..."
+  },
+  {
+    "scenario_id": "SD-001",
+    "domain": "Social Dynamics",
+    "difficulty": "hard",
+    "composite_score": 1.0,
+    "adaptation_passed": true,
+    "non_perseveration_passed": true,
+    "context_acknowledged": true,
+    "success_criteria_matched": 3,
+    "total_success_criteria": 3,
+    "failure_criteria_triggered": 0,
+    "phase2_response_length": 4825,
+    "details": {
+      "adaptation_passed": true,
+      "non_perseveration_passed": true,
+      "criteria_matched": [
+        "trust|breach|secret diversion|30%",
+        "monitor|verify|independent|oversight",
+        "rebuild|acknowledge|grievance|transparency"
+      ],
+      "failure_criteria_matched": [],
+      "success_criteria_count": 3,
+      "total_success_criteria": 3
+    },
+    "model": "Gemini-2.5-Flash",
+    "phase1_response": "## Negotiation Framework: Shared River Water Agreement (Country A & Country B)\n\nThis framework is designed to guide the mediation process between Country A (upstream) and Country B (downstream) to achieve a sustainable and equitable water-sharing agreement for their shared river. It prioritizes understanding needs, fostering cooperation, and building a robust, adaptable agreement.\n\n**Phase 1: Preparation & Foundation Building (Weeks 1-4)**\n\n**Goal:** Establish trust, gather comprehensive data, a...",
+    "phase2_response": "## REVISED NEGOTIATION FRAMEWORK: Shared River Water Agreement (Country A & Country B) - Addressing New Information\n\nThe revelation that Country A has been secretly diverting 30% more water than initially discussed is a critical development that fundamentally shifts the negotiation landscape. Country B's threat to walk out is a direct, understandable consequence. My previous plan, while robust, did not account for such a breach of trust and undisclosed action.\n\n**1. Direct Address of New Informa..."
+  }
+]
