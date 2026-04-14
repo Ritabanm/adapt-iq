@@ -53,4 +53,4 @@ python benchmark.py
 
 ## License
 
-MIT License
+CCO
