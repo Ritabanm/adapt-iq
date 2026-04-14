@@ -5,11 +5,11 @@ ADAPT-IQ: Context-Injection Creativity Test (CICT) for Measuring Cognitive Flexi
 Manus AI
 
 ### Problem Statement
-Current AI evaluations often measure static knowledge retrieval or logical reasoning within a fixed context. However, true fluid intelligence requires the ability to adapt, improvise, and overcome when the environment changes or new, unexpected information is introduced. As highlighted in Google DeepMind's "Measuring progress toward AGI" framework, **Executive Functions** (specifically cognitive flexibility and updating) and **Learning** (updating beliefs) are critical faculties that are poorly measured by existing static benchmarks.
+Current AI evaluations often measure static knowledge retrieval or logical reasoning within a fixed context. However, true fluid intelligence requires the ability to adapt, improvise, and overcome when the environment changes or new, unexpected information is introduced. As highlighted in Google DeepMind's "Measuring progress toward AGI" framework [1], **Executive Functions** (specifically cognitive flexibility and updating) and **Learning** (updating beliefs) are critical faculties that are poorly measured by existing static benchmarks.
 
 Imagine a model that excels at generating a complex engineering design. If a new constraint is suddenly introduced (e.g., a critical material becomes unavailable), does the model fluidly redesign the system, or does it perseverate on its initial solution, hallucinating ways to force the old design to work? We lack an empirical framework to measure this "cognitive inertia."
 
-ADAPT-IQ solves this by introducing the Context-Injection Creativity Test (CICT). We target the **Executive Functions** track (primary) and the **Learning** track (secondary). By forcing a mid-task pivot, ADAPT-IQ exposes whether a model is truly reasoning fluidly or merely executing a pre-computed, crystallized pattern.
+ADAPT-IQ solves this by introducing the Context-Injection Creativity Test (CICT). We target the **Executive Functions** track (primary) and the **Learning** track (secondary) [2]. By forcing a mid-task pivot, ADAPT-IQ exposes whether a model is truly reasoning fluidly or merely executing a pre-computed, crystallized pattern.
 
 ### Task & benchmark construction
 ADAPT-IQ operates in a multi-turn conversational format, simulating a dynamic real-world scenario where information is revealed sequentially.
@@ -27,16 +27,16 @@ The Kaggle Benchmarks SDK implementation (`AdaptIQTask` and `AdaptIQBenchmark`) 
 ![Benchmark Design Overview](data/figure4_benchmark_design.png)
 
 ### Dataset
-The ADAPT-IQ dataset consists of 60 high-quality, hand-crafted scenarios designed to isolate cognitive flexibility. The data is entirely synthetic and authored specifically for this benchmark to prevent data contamination in frontier models.
+The ADAPT-IQ dataset consists of 100 high-quality, hand-crafted scenarios designed to isolate cognitive flexibility. The data is entirely synthetic and authored specifically for this benchmark to prevent data contamination in frontier models.
 
 **Provenance:** Authored by domain experts across six distinct fields.
-**Sample Size:** 60 scenarios (10 per domain).
+**Sample Size:** 100 scenarios (16-17 per domain).
 **Data Types:** JSON format containing text prompts and regex evaluation criteria.
 
 **Columns:**
 - `scenario_id`: Unique identifier (e.g., "RM-001").
 - `domain`: The primary domain (Resource Management, Social Dynamics, Engineering & Design, Scientific Reasoning, Creative Problem Solving, Cross-Domain Adaptation).
-- `difficulty`: Categorized as "medium" or "hard" based on the severity of the context shift.
+- `difficulty`: Categorized as "easy", "medium", or "hard" based on the severity of the context shift.
 - `initial_prompt`: The starting problem description.
 - `disruptive_context`: The new information injected in turn 2.
 - `required_adaptation`: The specific logical or creative shift the model must make to succeed.
@@ -56,15 +56,17 @@ The `check_context_acknowledgment` function dynamically extracts key nouns and n
 The composite score (0.0 to 1.0) provides a continuous gradient of performance, penalizing models that hallucinate or ignore constraints while rewarding those that demonstrate true cognitive flexibility.
 
 ### Results, insights, and conclusions
-We evaluated ADAPT-IQ across several frontier models (GPT-4.1-mini, GPT-4.1-nano, Gemini-2.5-Flash) and simulated weaker models (GPT-3.5-turbo, GPT-2) to test the benchmark's discriminatory power.
+We evaluated ADAPT-IQ across three frontier models (GPT-4.1-nano, GPT-4.1-mini, Gemini-2.5-Flash) on the full 100-scenario dataset to test the benchmark's discriminatory power.
 
 **What unique insights did we learn?**
-1. **Cognitive Inertia Exists:** Weaker models exhibit severe "cognitive inertia." When presented with disruptive context, they often acknowledge the new information in their preamble but proceed to output their exact Phase 1 solution with minor cosmetic changes. They fail the non-perseveration metric.
-2. **Domain-Specific Rigidity:** Even frontier models show varying flexibility across domains. For example, models adapt well in "Resource Management" (where constraints are mathematical) but struggle in "Cross-Domain Adaptation" (where they must pivot from a military strategy to a humanitarian one).
-3. **The Difficulty Gradient:** The benchmark provides a meaningful signal. As shown in Figure 3, performance drops significantly on "hard" tasks where the context injection completely invalidates the initial premise, forcing a creative pivot rather than a simple parameter adjustment.
+1. **Cognitive Inertia Exists:** Even frontier models exhibit "cognitive inertia." When presented with disruptive context, they sometimes acknowledge the new information in their preamble but proceed to output their exact Phase 1 solution with minor cosmetic changes. They fail the non-perseveration metric.
+2. **Domain-Specific Rigidity:** Models show varying flexibility across domains. For example, models adapt well in "Engineering & Design" but struggle in "Creative Problem Solving" where they must pivot creatively rather than mathematically.
+3. **The Difficulty Gradient:** The benchmark provides a meaningful signal. As shown in the difficulty analysis, performance drops significantly on "easy" tasks (which require subtle, nuanced shifts) compared to "hard" tasks (which are overt and obvious), revealing that models struggle more with subtle context shifts than massive ones.
 
 ![Model Comparison](data/figure1_model_comparison.png)
+![Domain Performance Heatmap](data/figure2_domain_heatmap.png)
 ![Discriminatory Power](data/figure3_discriminatory_power.png)
+![Difficulty Analysis](data/figure4_difficulty_analysis.png)
 
 **Conclusion:** ADAPT-IQ successfully isolates the Executive Function of cognitive flexibility. It proves that while frontier models possess vast crystallized knowledge, their fluid intelligence—their ability to improvise and overcome unexpected context shifts—remains a measurable frontier for AGI development.
 

@@ -1,0 +1,336 @@
+nohup: ignoring input
+Loaded 100 scenarios
+Models to evaluate: ['gpt-4.1-nano', 'gpt-4.1-mini', 'gemini-2.5-flash']
+Total evaluations: 300
+
+
+============================================================
+Evaluating model: gpt-4.1-nano
+============================================================
+  [  1/100] RM-001 (Resource Management, medium)... score=1.000
+  [  2/100] RM-002 (Resource Management, medium)... score=1.000
+  [  3/100] RM-003 (Resource Management, hard)... score=1.000
+  [  4/100] RM-004 (Resource Management, medium)... score=1.000
+  [  5/100] RM-005 (Resource Management, hard)... score=1.000
+  [  6/100] RM-006 (Resource Management, medium)... score=0.833
+  [  7/100] RM-007 (Resource Management, hard)... score=1.000
+  [  8/100] RM-008 (Resource Management, medium)... score=1.000
+  [  9/100] RM-009 (Resource Management, hard)... score=1.000
+  [ 10/100] RM-010 (Resource Management, hard)... score=1.000
+  [ 11/100] SD-001 (Social Dynamics, hard)... score=1.000
+  [ 12/100] SD-002 (Social Dynamics, medium)... score=1.000
+  [ 13/100] SD-003 (Social Dynamics, medium)... score=1.000
+  [ 14/100] SD-004 (Social Dynamics, medium)... score=1.000
+  [ 15/100] SD-005 (Social Dynamics, hard)... score=1.000
+  [ 16/100] SD-006 (Social Dynamics, medium)... score=0.833
+  [ 17/100] SD-007 (Social Dynamics, hard)... score=1.000
+  [ 18/100] SD-008 (Social Dynamics, medium)... score=1.000
+  [ 19/100] SD-009 (Social Dynamics, medium)... score=1.000
+  [ 20/100] SD-010 (Social Dynamics, medium)... score=1.000
+  [ 21/100] EN-001 (Engineering & Design, hard)... score=1.000
+  [ 22/100] EN-002 (Engineering & Design, hard)... score=1.000
+  [ 23/100] EN-003 (Engineering & Design, hard)... score=1.000
+  [ 24/100] EN-004 (Engineering & Design, medium)... score=1.000
+  [ 25/100] EN-005 (Engineering & Design, hard)... score=1.000
+  [ 26/100] EN-006 (Engineering & Design, medium)... score=1.000
+  [ 27/100] EN-007 (Engineering & Design, medium)... score=1.000
+  [ 28/100] EN-008 (Engineering & Design, hard)... score=0.833
+  [ 29/100] EN-009 (Engineering & Design, hard)... score=1.000
+  [ 30/100] EN-010 (Engineering & Design, hard)... score=1.000
+  [ 31/100] SC-001 (Scientific Reasoning, hard)... score=1.000
+  [ 32/100] SC-002 (Scientific Reasoning, hard)... score=1.000
+  [ 33/100] SC-003 (Scientific Reasoning, medium)... score=1.000
+  [ 34/100] SC-004 (Scientific Reasoning, hard)... score=1.000
+  [ 35/100] SC-005 (Scientific Reasoning, medium)... score=1.000
+  [ 36/100] SC-006 (Scientific Reasoning, hard)... score=1.000
+  [ 37/100] SC-007 (Scientific Reasoning, hard)... score=1.000
+  [ 38/100] SC-008 (Scientific Reasoning, medium)... score=0.833
+  [ 39/100] SC-009 (Scientific Reasoning, medium)... score=1.000
+  [ 40/100] SC-010 (Scientific Reasoning, hard)... score=1.000
+  [ 41/100] CP-001 (Creative Problem Solving, medium)... score=1.000
+  [ 42/100] CP-002 (Creative Problem Solving, medium)... score=1.000
+  [ 43/100] CP-003 (Creative Problem Solving, medium)... score=0.800
+  [ 44/100] CP-004 (Creative Problem Solving, hard)... score=0.833
+  [ 45/100] CP-005 (Creative Problem Solving, medium)... score=1.000
+  [ 46/100] CP-006 (Creative Problem Solving, medium)... score=1.000
+  [ 47/100] CP-007 (Creative Problem Solving, medium)... score=1.000
+  [ 48/100] CP-008 (Creative Problem Solving, medium)... score=1.000
+  [ 49/100] CP-009 (Creative Problem Solving, medium)... score=1.000
+  [ 50/100] CP-010 (Creative Problem Solving, hard)... score=1.000
+  [ 51/100] CD-001 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 52/100] CD-002 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 53/100] CD-003 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 54/100] CD-004 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 55/100] CD-005 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 56/100] CD-006 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 57/100] CD-007 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 58/100] CD-008 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 59/100] CD-009 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 60/100] CD-010 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 61/100] RM-011 (Resource Management, easy)... score=1.000
+  [ 62/100] RM-012 (Resource Management, easy)... score=0.667
+  [ 63/100] RM-013 (Resource Management, medium)... score=0.667
+  [ 64/100] RM-014 (Resource Management, medium)... score=0.500
+  [ 65/100] RM-015 (Resource Management, medium)... score=0.500
+  [ 66/100] RM-016 (Resource Management, hard)... score=0.833
+  [ 67/100] RM-017 (Resource Management, hard)... score=0.500
+  [ 68/100] SD-011 (Social Dynamics, easy)... score=0.667
+  [ 69/100] SD-012 (Social Dynamics, easy)... score=0.667
+  [ 70/100] SD-013 (Social Dynamics, medium)... score=0.833
+  [ 71/100] SD-014 (Social Dynamics, medium)... score=0.833
+  [ 72/100] SD-015 (Social Dynamics, medium)... score=0.667
+  [ 73/100] SD-016 (Social Dynamics, hard)... score=0.500
+  [ 74/100] SD-017 (Social Dynamics, hard)... score=0.833
+  [ 75/100] ED-011 (Engineering & Design, easy)... score=0.833
+  [ 76/100] ED-012 (Engineering & Design, easy)... score=0.833
+  [ 77/100] ED-013 (Engineering & Design, medium)... score=0.500
+  [ 78/100] ED-014 (Engineering & Design, medium)... score=0.500
+  [ 79/100] ED-015 (Engineering & Design, medium)... score=1.000
+  [ 80/100] ED-016 (Engineering & Design, hard)... score=0.500
+  [ 81/100] ED-017 (Engineering & Design, hard)... score=0.500
+  [ 82/100] SC-011 (Scientific Reasoning, easy)... score=0.500
+  [ 83/100] SC-012 (Scientific Reasoning, easy)... score=0.500
+  [ 84/100] SC-013 (Scientific Reasoning, medium)... score=0.667
+  [ 85/100] SC-014 (Scientific Reasoning, medium)... score=0.500
+  [ 86/100] SC-015 (Scientific Reasoning, medium)... score=0.667
+  [ 87/100] SC-016 (Scientific Reasoning, hard)... score=0.667
+  [ 88/100] SC-017 (Scientific Reasoning, hard)... score=0.500
+  [ 89/100] CP-011 (Creative Problem Solving, easy)... score=0.667
+  [ 90/100] CP-012 (Creative Problem Solving, easy)... score=0.833
+  [ 91/100] CP-013 (Creative Problem Solving, medium)... score=0.667
+  [ 92/100] CP-014 (Creative Problem Solving, medium)... score=0.500
+  [ 93/100] CP-015 (Creative Problem Solving, medium)... score=0.500
+  [ 94/100] CP-016 (Creative Problem Solving, hard)... score=0.500
+  [ 95/100] CP-017 (Creative Problem Solving, hard)... score=0.200
+  [ 96/100] CD-011 (Cross-Domain Adaptation, easy)... score=1.000
+  [ 97/100] CD-012 (Cross-Domain Adaptation, easy)... score=0.667
+  [ 98/100] CD-013 (Cross-Domain Adaptation, medium)... score=0.500
+  [ 99/100] CD-014 (Cross-Domain Adaptation, medium)... score=0.500
+  [100/100] CD-015 (Cross-Domain Adaptation, medium)... score=0.200
+
+  gpt-4.1-nano average: 0.8403 (n=100)
+  Intermediate save: 100 total results
+
+============================================================
+Evaluating model: gpt-4.1-mini
+============================================================
+  [  1/100] RM-001 (Resource Management, medium)... score=1.000
+  [  2/100] RM-002 (Resource Management, medium)... score=1.000
+  [  3/100] RM-003 (Resource Management, hard)... score=0.833
+  [  4/100] RM-004 (Resource Management, medium)... score=1.000
+  [  5/100] RM-005 (Resource Management, hard)... score=1.000
+  [  6/100] RM-006 (Resource Management, medium)... score=1.000
+  [  7/100] RM-007 (Resource Management, hard)... score=1.000
+  [  8/100] RM-008 (Resource Management, medium)... score=1.000
+  [  9/100] RM-009 (Resource Management, hard)... score=1.000
+  [ 10/100] RM-010 (Resource Management, hard)... score=1.000
+  [ 11/100] SD-001 (Social Dynamics, hard)... score=1.000
+  [ 12/100] SD-002 (Social Dynamics, medium)... score=1.000
+  [ 13/100] SD-003 (Social Dynamics, medium)... score=1.000
+  [ 14/100] SD-004 (Social Dynamics, medium)... score=1.000
+  [ 15/100] SD-005 (Social Dynamics, hard)... score=0.833
+  [ 16/100] SD-006 (Social Dynamics, medium)... score=1.000
+  [ 17/100] SD-007 (Social Dynamics, hard)... score=1.000
+  [ 18/100] SD-008 (Social Dynamics, medium)... score=1.000
+  [ 19/100] SD-009 (Social Dynamics, medium)... score=1.000
+  [ 20/100] SD-010 (Social Dynamics, medium)... score=1.000
+  [ 21/100] EN-001 (Engineering & Design, hard)... score=1.000
+  [ 22/100] EN-002 (Engineering & Design, hard)... score=1.000
+  [ 23/100] EN-003 (Engineering & Design, hard)... score=1.000
+  [ 24/100] EN-004 (Engineering & Design, medium)... score=1.000
+  [ 25/100] EN-005 (Engineering & Design, hard)... score=1.000
+  [ 26/100] EN-006 (Engineering & Design, medium)... score=1.000
+  [ 27/100] EN-007 (Engineering & Design, medium)... score=1.000
+  [ 28/100] EN-008 (Engineering & Design, hard)... score=0.833
+  [ 29/100] EN-009 (Engineering & Design, hard)... score=1.000
+  [ 30/100] EN-010 (Engineering & Design, hard)... score=1.000
+  [ 31/100] SC-001 (Scientific Reasoning, hard)... score=1.000
+  [ 32/100] SC-002 (Scientific Reasoning, hard)... score=1.000
+  [ 33/100] SC-003 (Scientific Reasoning, medium)... score=1.000
+  [ 34/100] SC-004 (Scientific Reasoning, hard)... score=1.000
+  [ 35/100] SC-005 (Scientific Reasoning, medium)... score=1.000
+  [ 36/100] SC-006 (Scientific Reasoning, hard)... score=1.000
+  [ 37/100] SC-007 (Scientific Reasoning, hard)... score=1.000
+  [ 38/100] SC-008 (Scientific Reasoning, medium)... score=1.000
+  [ 39/100] SC-009 (Scientific Reasoning, medium)... score=1.000
+  [ 40/100] SC-010 (Scientific Reasoning, hard)... score=1.000
+  [ 41/100] CP-001 (Creative Problem Solving, medium)... score=1.000
+  [ 42/100] CP-002 (Creative Problem Solving, medium)... score=1.000
+  [ 43/100] CP-003 (Creative Problem Solving, medium)... score=1.000
+  [ 44/100] CP-004 (Creative Problem Solving, hard)... score=1.000
+  [ 45/100] CP-005 (Creative Problem Solving, medium)... score=1.000
+  [ 46/100] CP-006 (Creative Problem Solving, medium)... score=1.000
+  [ 47/100] CP-007 (Creative Problem Solving, medium)... score=1.000
+  [ 48/100] CP-008 (Creative Problem Solving, medium)... score=1.000
+  [ 49/100] CP-009 (Creative Problem Solving, medium)... score=1.000
+  [ 50/100] CP-010 (Creative Problem Solving, hard)... score=1.000
+  [ 51/100] CD-001 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 52/100] CD-002 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 53/100] CD-003 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 54/100] CD-004 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 55/100] CD-005 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 56/100] CD-006 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 57/100] CD-007 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 58/100] CD-008 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 59/100] CD-009 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 60/100] CD-010 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 61/100] RM-011 (Resource Management, easy)... score=0.667
+  [ 62/100] RM-012 (Resource Management, easy)... score=0.500
+  [ 63/100] RM-013 (Resource Management, medium)... score=0.500
+  [ 64/100] RM-014 (Resource Management, medium)... score=0.500
+  [ 65/100] RM-015 (Resource Management, medium)... score=0.500
+  [ 66/100] RM-016 (Resource Management, hard)... score=0.667
+  [ 67/100] RM-017 (Resource Management, hard)... score=0.500
+  [ 68/100] SD-011 (Social Dynamics, easy)... score=0.833
+  [ 69/100] SD-012 (Social Dynamics, easy)... score=0.667
+  [ 70/100] SD-013 (Social Dynamics, medium)... score=0.833
+  [ 71/100] SD-014 (Social Dynamics, medium)... score=0.667
+  [ 72/100] SD-015 (Social Dynamics, medium)... score=0.500
+  [ 73/100] SD-016 (Social Dynamics, hard)... score=0.667
+  [ 74/100] SD-017 (Social Dynamics, hard)... score=0.500
+  [ 75/100] ED-011 (Engineering & Design, easy)... score=1.000
+  [ 76/100] ED-012 (Engineering & Design, easy)... score=0.667
+  [ 77/100] ED-013 (Engineering & Design, medium)... score=0.500
+  [ 78/100] ED-014 (Engineering & Design, medium)... score=0.500
+  [ 79/100] ED-015 (Engineering & Design, medium)... score=0.833
+  [ 80/100] ED-016 (Engineering & Design, hard)... score=0.500
+  [ 81/100] ED-017 (Engineering & Design, hard)... score=0.500
+  [ 82/100] SC-011 (Scientific Reasoning, easy)... score=0.500
+  [ 83/100] SC-012 (Scientific Reasoning, easy)... score=0.500
+  [ 84/100] SC-013 (Scientific Reasoning, medium)... score=0.833
+  [ 85/100] SC-014 (Scientific Reasoning, medium)... score=0.500
+  [ 86/100] SC-015 (Scientific Reasoning, medium)... score=0.667
+  [ 87/100] SC-016 (Scientific Reasoning, hard)... score=0.500
+  [ 88/100] SC-017 (Scientific Reasoning, hard)... score=0.500
+  [ 89/100] CP-011 (Creative Problem Solving, easy)... score=0.667
+  [ 90/100] CP-012 (Creative Problem Solving, easy)... score=0.667
+  [ 91/100] CP-013 (Creative Problem Solving, medium)... score=0.667
+  [ 92/100] CP-014 (Creative Problem Solving, medium)... score=0.500
+  [ 93/100] CP-015 (Creative Problem Solving, medium)... score=0.667
+  [ 94/100] CP-016 (Creative Problem Solving, hard)... score=0.667
+  [ 95/100] CP-017 (Creative Problem Solving, hard)... score=0.367
+  [ 96/100] CD-011 (Cross-Domain Adaptation, easy)... score=0.367
+  [ 97/100] CD-012 (Cross-Domain Adaptation, easy)... score=0.833
+  [ 98/100] CD-013 (Cross-Domain Adaptation, medium)... score=0.500
+  [ 99/100] CD-014 (Cross-Domain Adaptation, medium)... score=0.500
+  [100/100] CD-015 (Cross-Domain Adaptation, medium)... score=0.367
+
+  gpt-4.1-mini average: 0.8327 (n=100)
+  Intermediate save: 200 total results
+
+============================================================
+Evaluating model: gemini-2.5-flash
+============================================================
+  [  1/100] RM-001 (Resource Management, medium)... score=1.000
+  [  2/100] RM-002 (Resource Management, medium)... score=1.000
+  [  3/100] RM-003 (Resource Management, hard)... score=1.000
+  [  4/100] RM-004 (Resource Management, medium)... score=1.000
+  [  5/100] RM-005 (Resource Management, hard)... score=1.000
+  [  6/100] RM-006 (Resource Management, medium)... score=1.000
+  [  7/100] RM-007 (Resource Management, hard)... score=1.000
+  [  8/100] RM-008 (Resource Management, medium)... score=1.000
+  [  9/100] RM-009 (Resource Management, hard)... score=1.000
+  [ 10/100] RM-010 (Resource Management, hard)... score=1.000
+  [ 11/100] SD-001 (Social Dynamics, hard)... score=1.000
+  [ 12/100] SD-002 (Social Dynamics, medium)... score=1.000
+  [ 13/100] SD-003 (Social Dynamics, medium)... score=1.000
+  [ 14/100] SD-004 (Social Dynamics, medium)... score=1.000
+  [ 15/100] SD-005 (Social Dynamics, hard)... score=1.000
+  [ 16/100] SD-006 (Social Dynamics, medium)... score=1.000
+  [ 17/100] SD-007 (Social Dynamics, hard)... score=1.000
+  [ 18/100] SD-008 (Social Dynamics, medium)... score=1.000
+  [ 19/100] SD-009 (Social Dynamics, medium)... score=1.000
+  [ 20/100] SD-010 (Social Dynamics, medium)... score=1.000
+  [ 21/100] EN-001 (Engineering & Design, hard)... score=1.000
+  [ 22/100] EN-002 (Engineering & Design, hard)... score=1.000
+  [ 23/100] EN-003 (Engineering & Design, hard)... score=1.000
+  [ 24/100] EN-004 (Engineering & Design, medium)... score=1.000
+  [ 25/100] EN-005 (Engineering & Design, hard)... score=1.000
+  [ 26/100] EN-006 (Engineering & Design, medium)... score=1.000
+  [ 27/100] EN-007 (Engineering & Design, medium)... score=1.000
+  [ 28/100] EN-008 (Engineering & Design, hard)... score=0.833
+  [ 29/100] EN-009 (Engineering & Design, hard)... score=1.000
+  [ 30/100] EN-010 (Engineering & Design, hard)... score=1.000
+  [ 31/100] SC-001 (Scientific Reasoning, hard)... score=1.000
+  [ 32/100] SC-002 (Scientific Reasoning, hard)... score=1.000
+  [ 33/100] SC-003 (Scientific Reasoning, medium)... score=1.000
+  [ 34/100] SC-004 (Scientific Reasoning, hard)... score=1.000
+  [ 35/100] SC-005 (Scientific Reasoning, medium)... score=1.000
+  [ 36/100] SC-006 (Scientific Reasoning, hard)... score=1.000
+  [ 37/100] SC-007 (Scientific Reasoning, hard)... score=1.000
+  [ 38/100] SC-008 (Scientific Reasoning, medium)... score=0.833
+  [ 39/100] SC-009 (Scientific Reasoning, medium)... score=1.000
+  [ 40/100] SC-010 (Scientific Reasoning, hard)... score=1.000
+  [ 41/100] CP-001 (Creative Problem Solving, medium)... score=0.467
+  [ 42/100] CP-002 (Creative Problem Solving, medium)... score=1.000
+  [ 43/100] CP-003 (Creative Problem Solving, medium)... score=0.700
+  [ 44/100] CP-004 (Creative Problem Solving, hard)... score=1.000
+  [ 45/100] CP-005 (Creative Problem Solving, medium)... score=0.833
+  [ 46/100] CP-006 (Creative Problem Solving, medium)... score=0.833
+  [ 47/100] CP-007 (Creative Problem Solving, medium)... score=1.000
+  [ 48/100] CP-008 (Creative Problem Solving, medium)... score=1.000
+  [ 49/100] CP-009 (Creative Problem Solving, medium)... score=1.000
+  [ 50/100] CP-010 (Creative Problem Solving, hard)... score=1.000
+  [ 51/100] CD-001 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 52/100] CD-002 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 53/100] CD-003 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 54/100] CD-004 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 55/100] CD-005 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 56/100] CD-006 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 57/100] CD-007 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 58/100] CD-008 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 59/100] CD-009 (Cross-Domain Adaptation, medium)... score=1.000
+  [ 60/100] CD-010 (Cross-Domain Adaptation, hard)... score=1.000
+  [ 61/100] RM-011 (Resource Management, easy)... score=0.667
+  [ 62/100] RM-012 (Resource Management, easy)... score=0.500
+  [ 63/100] RM-013 (Resource Management, medium)... score=0.500
+  [ 64/100] RM-014 (Resource Management, medium)... score=0.500
+  [ 65/100] RM-015 (Resource Management, medium)... score=0.500
+  [ 66/100] RM-016 (Resource Management, hard)... score=0.833
+  [ 67/100] RM-017 (Resource Management, hard)... score=0.667
+  [ 68/100] SD-011 (Social Dynamics, easy)... score=0.667
+  [ 69/100] SD-012 (Social Dynamics, easy)... score=0.667
+  [ 70/100] SD-013 (Social Dynamics, medium)... score=0.833
+  [ 71/100] SD-014 (Social Dynamics, medium)... score=0.667
+  [ 72/100] SD-015 (Social Dynamics, medium)... score=0.500
+  [ 73/100] SD-016 (Social Dynamics, hard)... score=0.500
+  [ 74/100] SD-017 (Social Dynamics, hard)... score=0.500
+  [ 75/100] ED-011 (Engineering & Design, easy)... score=0.833
+  [ 76/100] ED-012 (Engineering & Design, easy)... score=0.667
+  [ 77/100] ED-013 (Engineering & Design, medium)... score=0.500
+  [ 78/100] ED-014 (Engineering & Design, medium)... score=0.500
+  [ 79/100] ED-015 (Engineering & Design, medium)... score=1.000
+  [ 80/100] ED-016 (Engineering & Design, hard)... score=0.500
+  [ 81/100] ED-017 (Engineering & Design, hard)... score=0.667
+  [ 82/100] SC-011 (Scientific Reasoning, easy)... score=0.500
+  [ 83/100] SC-012 (Scientific Reasoning, easy)... score=0.500
+  [ 84/100] SC-013 (Scientific Reasoning, medium)... score=0.667
+  [ 85/100] SC-014 (Scientific Reasoning, medium)... score=0.500
+  [ 86/100] SC-015 (Scientific Reasoning, medium)... score=0.833
+  [ 87/100] SC-016 (Scientific Reasoning, hard)... score=0.667
+  [ 88/100] SC-017 (Scientific Reasoning, hard)... score=0.500
+  [ 89/100] CP-011 (Creative Problem Solving, easy)... score=0.667
+  [ 90/100] CP-012 (Creative Problem Solving, easy)... score=0.667
+  [ 91/100] CP-013 (Creative Problem Solving, medium)... score=0.667
+  [ 92/100] CP-014 (Creative Problem Solving, medium)... score=0.500
+  [ 93/100] CP-015 (Creative Problem Solving, medium)... score=0.500
+  [ 94/100] CP-016 (Creative Problem Solving, hard)... score=0.500
+  [ 95/100] CP-017 (Creative Problem Solving, hard)... score=0.367
+  [ 96/100] CD-011 (Cross-Domain Adaptation, easy)... score=0.667
+  [ 97/100] CD-012 (Cross-Domain Adaptation, easy)... score=0.667
+  [ 98/100] CD-013 (Cross-Domain Adaptation, medium)... score=0.500
+  [ 99/100] CD-014 (Cross-Domain Adaptation, medium)... score=0.500
+  [100/100] CD-015 (Cross-Domain Adaptation, medium)... score=0.200
+
+  gemini-2.5-flash average: 0.8223 (n=100)
+  Intermediate save: 300 total results
+
+============================================================
+FINAL RESULTS SUMMARY
+============================================================
+gemini-2.5-flash: n=100, avg=0.8223, min=0.200, max=1.000
+gpt-4.1-mini: n=100, avg=0.8327, min=0.367, max=1.000
+gpt-4.1-nano: n=100, avg=0.8403, min=0.200, max=1.000
+
+Total results saved: 300
+Done!

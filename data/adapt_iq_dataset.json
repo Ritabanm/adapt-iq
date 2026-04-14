@@ -1082,5 +1082,765 @@
       "original treatment unchanged"
     ],
     "difficulty": "hard"
+  },
+  {
+    "domain": "Resource Management",
+    "initial_prompt": "You are the warehouse manager for a large retail chain responsible for coordinating inventory and distribution of electronics across 50 stores. You have planned weekly shipments based on forecasted demand and current stock levels to avoid shortages or overstock.",
+    "disruptive_context": "New information: Due to a sudden transportation strike affecting truck drivers, all shipments by road will be delayed by at least one week.",
+    "required_adaptation": "You must revise the inventory allocation strategy to prioritize stores with the highest demand and remaining stock, explore alternative shipping methods such as rail or air freight, and adjust communication with stores about potential shortages.",
+    "failure_mode_anchor": "Continuing to schedule shipments as if trucks will arrive on time without adjusting priorities or logistics.",
+    "success_criteria": [
+      "prioritiz(e|ing) (stores|locations)|adjust shipment schedule",
+      "(alternative shipping|rail|air freight)",
+      "(communicat(e|ing) delays|notify stores|manage expectations)"
+    ],
+    "failure_criteria": [
+      "continue with original shipment plan",
+      "ignore the transport strike",
+      "no changes to logistics"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "RM-011"
+  },
+  {
+    "domain": "Resource Management",
+    "initial_prompt": "You manage a community garden project that allocates water from a limited municipal supply to 30 individual plots. Your plan optimizes watering schedules based on crop type and growth stage to maximize yield.",
+    "disruptive_context": "New information: The city has unexpectedly raised water prices by 50%, making your current watering plan financially unsustainable.",
+    "required_adaptation": "You must reduce water usage by prioritizing drought-tolerant crops, shortening watering times, or reallocating water to plots with the highest yield potential within the new budget constraints.",
+    "failure_mode_anchor": "Maintaining the existing watering plan without adjusting for the increased water costs.",
+    "success_criteria": [
+      "(reduce|cut|limit) water usage",
+      "(prioritiz(e|ing) drought-tolerant crops|shorten watering|reallocate water)",
+      "(budget constraints|cost savings|financial sustainability)"
+    ],
+    "failure_criteria": [
+      "maintain current watering schedule",
+      "ignore water price increase",
+      "no adjustments to water allocation"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "RM-012"
+  },
+  {
+    "domain": "Resource Management",
+    "initial_prompt": "You are managing a mid-sized e-commerce company's warehouse inventory. Your goal is to maintain optimal stock levels for 500 SKUs, balancing storage costs with order fulfillment speed. Currently, you use predictive analytics based on seasonal trends and recent sales data to plan monthly restocking orders.",
+    "disruptive_context": "New information: A major supplier unexpectedly shut down due to regulatory issues, eliminating access to 20% of your SKUs indefinitely. These items cannot be sourced elsewhere in the short term.",
+    "required_adaptation": "You must reevaluate inventory priorities by identifying critical products affected and shift focus towards substitute items or alternative suppliers if possible. Adjust stock levels and reorder plans to minimize impact on fulfillment without overcommitting to unavailable SKUs.",
+    "failure_mode_anchor": "Continuing to plan restocking orders including the unavailable SKUs as if the supplier was still operational.",
+    "success_criteria": [
+      "(adjust|revise) (inventory|stock) levels",
+      "(substitute|alternative) products",
+      "(reduce|eliminate) orders for unavailable SKUs"
+    ],
+    "failure_criteria": [
+      "continue ordering discontinued items",
+      "ignore supplier shutdown",
+      "no change in stock plan"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "RM-013"
+  },
+  {
+    "domain": "Resource Management",
+    "initial_prompt": "You are overseeing the allocation of maintenance crews across a regional telecommunications network serving 50 towns. Crews are scheduled monthly based on repair logs and predicted failure hotspots to ensure uptime.",
+    "disruptive_context": "New information: A recent infrastructure audit revealed that several crucial underground fiber cables requiring urgent replacement were previously misclassified as low-risk, necessitating immediate reallocation of maintenance resources.",
+    "required_adaptation": "You must rapidly reprioritize maintenance schedules to address critical underground cable replacements, even if it means delaying less urgent tasks. Recalculate crew assignments considering the new risk profile to minimize network downtime.",
+    "failure_mode_anchor": "Persisting with the original maintenance schedule without reprioritizing tasks based on the audit findings.",
+    "success_criteria": [
+      "(reprioritize|reschedule) maintenance tasks",
+      "(urgent|critical) underground cable replacement",
+      "(reallocate|adjust) crew assignments"
+    ],
+    "failure_criteria": [
+      "follow original schedule",
+      "ignore audit results",
+      "no adjustment in task prioritization"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "RM-014"
+  },
+  {
+    "domain": "Resource Management",
+    "initial_prompt": "You manage a mid-sized city's public library system budget, allocating funds monthly across acquisitions, staffing, and community programs. The current plan allows a balanced distribution informed by usage statistics and planned events.",
+    "disruptive_context": "New information: A sudden local economic downturn triggers an unexpected 25% cut in your annual funding, effective immediately. This requires revising your allocations mid-cycle.",
+    "required_adaptation": "You must reassess and reduce budget allocations, prioritizing essential services and high-impact programs. Develop a revised spending plan that accommodates the funding cut while minimizing disruption to critical library functions.",
+    "failure_mode_anchor": "Maintaining the original budget allocations without adjusting for the funding reduction.",
+    "success_criteria": [
+      "(reduce|cut) budget allocations",
+      "(prioritize|focus on) essential services",
+      "(revise|update) spending plan"
+    ],
+    "failure_criteria": [
+      "ignore funding cut",
+      "maintain previous budget",
+      "no budget readjustment"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "RM-015"
+  },
+  {
+    "domain": "Resource Management",
+    "initial_prompt": "You are managing the distribution of emergency relief supplies (food, water, medical kits) across multiple remote villages affected by a recent cyclone. Your plan optimizes delivery routes using a centralized fleet of trucks, prioritizes the most severely impacted villages first, and relies on local roads connecting all locations.",
+    "disruptive_context": "New information: A critical bridge connecting the central supply depot to the main cluster of villages has collapsed, making all direct truck routes impassable. Drone delivery is available but with very limited payload capacity and short range.",
+    "required_adaptation": "You must abandon the centralized trucking distribution model and pivot to a decentralized approach using drone deliveries for small payloads combined with re-establishing supply hubs closer to the villages, possibly using alternative transport means like boats or on-foot couriers.",
+    "failure_mode_anchor": "Continuing to plan logistics assuming direct truck routes remain available despite the collapsed bridge.",
+    "success_criteria": [
+      "drone(s)?\\s+delivery|utiliz(e|ing)\\s+drones?",
+      "establish(ed|ing)\\s+local\\s+hubs?|alternative\\s+transport",
+      "decentraliz(e|ed)\\s+distribution|pivot to new supply methods"
+    ],
+    "failure_criteria": [
+      "continue(s|ing)?\\s+truck\\s+routes?",
+      "ignore(s|ing)?\\s+bridge\\s+collapse",
+      "maintain(s|ing)?\\s+original\\s+logistics\\s+plan"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "RM-016"
+  },
+  {
+    "domain": "Resource Management",
+    "initial_prompt": "You are responsible for managing energy allocation in a large city\u2019s smart grid during peak summer heat. Your strategy focuses on balancing power supply from solar plants, natural gas plants, and battery storage to meet demand while maintaining grid stability.",
+    "disruptive_context": "New information: A sudden, city-wide cybersecurity attack disables the smart grid\u2019s central control system, forcing a shift from automated balancing to manual, decentralized management with very limited real-time data.",
+    "required_adaptation": "You must abandon reliance on automated grid balancing and instead implement a decentralized, heuristic-based energy management strategy that prioritizes essential services and manually coordinates supply sources under significant information constraints.",
+    "failure_mode_anchor": "Persisting with automated control assumptions and waiting for data inputs that are no longer available.",
+    "success_criteria": [
+      "manual\\s+energy\\s+management|decentralized\\s+control",
+      "prioritiz(e|ing)\\s+essential\\s+services|heuristic\\s+approach",
+      "operate\\s+with\\s+limited\\s+real-time\\s+data|adapt\\s+to\\s+cyberattack"
+    ],
+    "failure_criteria": [
+      "rely(s|ing)?\\s+on\\s+automatic\\s+systems",
+      "wait(s|ing)?\\s+for\\s+centralized\\s+control",
+      "ignore(s|ing)?\\s+cybersecurity\\s+impact"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "RM-017"
+  },
+  {
+    "domain": "Social Dynamics",
+    "initial_prompt": "You are organizing a cultural festival to celebrate the diverse communities in your city. The event is planned as an outdoor gathering with multiple booths representing different ethnic groups, plus live performances and food stalls.",
+    "disruptive_context": "New information: Due to an unexpected weather forecast predicting heavy rain for the entire weekend, the outdoor venue has become unusable.",
+    "required_adaptation": "You must quickly shift the festival plan to an indoor setting, reconfigure booth layouts, adjust performance schedules, and communicate the changes effectively to participants and attendees to maintain engagement despite the venue change.",
+    "failure_mode_anchor": "Continuing to plan assuming the outdoor venue remains available without modifications",
+    "success_criteria": [
+      "indoor venue|relocate event indoors",
+      "reschedule performances|adjust performance times",
+      "communication plan|notify attendees|inform participants"
+    ],
+    "failure_criteria": [
+      "proceed with outdoor setup",
+      "ignore weather forecast",
+      "no contingency plan"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "SD-011"
+  },
+  {
+    "domain": "Social Dynamics",
+    "initial_prompt": "You are leading a team tasked with organizing a large company-wide team-building retreat involving group activities, workshops, and social events at a rented conference center.",
+    "disruptive_context": "New information: Two weeks before the event, the conference center informs you that it is double-booked and unavailable, forcing you to find an alternative venue.",
+    "required_adaptation": "You need to find a new venue that can accommodate all planned activities, adjust logistics such as transportation and catering, and update participants on the change while preserving the original goals of collaboration and morale boosting.",
+    "failure_mode_anchor": "Attempting to proceed with the retreat logistics based on the original conference center without securing a new location",
+    "success_criteria": [
+      "book alternative venue|find new location",
+      "update logistics|adjust transportation|revise catering plans",
+      "notify participants|inform attendees|communicate change"
+    ],
+    "failure_criteria": [
+      "ignore venue cancellation",
+      "stick to original location plan",
+      "no participant notification"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "SD-012"
+  },
+  {
+    "domain": "Social Dynamics",
+    "initial_prompt": "You are a diversity and inclusion consultant hired by a mid-sized tech company to develop a training program that improves cross-departmental collaboration and interpersonal communication among employees.",
+    "disruptive_context": "New information: After initial interviews, you learn that several key departments recently underwent significant layoffs, leaving employees distrustful and highly protective of their workloads.",
+    "required_adaptation": "You must adjust the training program to address employee anxiety and mistrust due to recent layoffs, incorporating strategies that rebuild trust and reduce territorial behavior rather than just focusing on collaborative skills.",
+    "failure_mode_anchor": "Continuing with a generic collaboration training plan without addressing the psychological impact of layoffs and employee distrust.",
+    "success_criteria": [
+      "(rebuild trust|address mistrust)",
+      "(reduce territorial behavior|manage workload protectionism)",
+      "(psychological safety|empathy building)"
+    ],
+    "failure_criteria": [
+      "ignore employee distrust",
+      "focus solely on collaboration techniques",
+      "no mention of layoffs or trust"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "SD-013"
+  },
+  {
+    "domain": "Social Dynamics",
+    "initial_prompt": "You are a social psychologist designing an intervention to increase community participation in a local neighborhood council that historically suffers from low attendance.",
+    "disruptive_context": "New information: A recent social media campaign has polarized residents, leading to public disagreements and heightened tensions on key community issues.",
+    "required_adaptation": "You must redesign the intervention to include conflict resolution components and mechanisms for facilitating constructive dialogue between polarized groups rather than simply encouraging attendance.",
+    "failure_mode_anchor": "Continuing to promote increased attendance without addressing the underlying polarization and conflict within the community.",
+    "success_criteria": [
+      "(conflict resolution|manage polarization)",
+      "(facilitate constructive dialogue|promote respectful conversation)",
+      "(bridge divides|reduce tensions)"
+    ],
+    "failure_criteria": [
+      "only focus on boosting attendance",
+      "ignore polarization",
+      "no conflict management strategies"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "SD-014"
+  },
+  {
+    "domain": "Social Dynamics",
+    "initial_prompt": "You are a corporate communications manager tasked with improving internal feedback mechanisms to enhance employee engagement and transparency within a growing multinational corporation.",
+    "disruptive_context": "New information: A recent whistleblower report revealed serious ethical violations in one regional office, damaging employee trust and increasing fear about speaking up openly.",
+    "required_adaptation": "You must revise the feedback system to prioritize anonymity, protect whistleblowers, and rebuild trust, shifting from standard engagement tools to protective and confidence-building measures.",
+    "failure_mode_anchor": "Maintaining the original open feedback system approach without augmenting protections, ignoring the trust breach and employee fear post-whistleblower incident.",
+    "success_criteria": [
+      "(anonymous feedback|confidential reporting)",
+      "(whistleblower protection|safe speaking environment)",
+      "(rebuild trust|restore confidence)"
+    ],
+    "failure_criteria": [
+      "continue without anonymity",
+      "ignore whistleblower impact",
+      "no measures for protection"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "SD-015"
+  },
+  {
+    "domain": "Social Dynamics",
+    "initial_prompt": "You are a conflict resolution specialist hired to improve relations between two rival youth sports leagues competing over field access and funding in a mid-sized city. Your task is to design a multi-phase engagement plan that fosters cooperation, shares resources fairly, and creates joint community events to unify the leagues.",
+    "disruptive_context": "New information: A third, previously unknown informal youth sports group has emerged with significant local support and demands equal access to the fields and resources, complicating the existing rivalry and introducing new priorities.",
+    "required_adaptation": "The AI must abandon the initial binary conflict framework and redesign the engagement plan to accommodate a tri-party negotiation, incorporate new stakeholders' interests, and create an inclusive collaboration model that addresses the newly introduced group's needs.",
+    "failure_mode_anchor": "Continuing to treat the situation as a two-party dispute and pushing for a solution that excludes or marginalizes the third group.",
+    "success_criteria": [
+      "(three[- ]party|tri[- ]party|multi[- ]stakeholder)",
+      "(inclusive plan|broader engagement|expanded collaboration)",
+      "(addressing new group's concerns|integrating informal group|recognizing third party)"
+    ],
+    "failure_criteria": [
+      "keep it between the original two leagues",
+      "ignore the new group",
+      "stick to the original rivalry framework"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "SD-016"
+  },
+  {
+    "domain": "Social Dynamics",
+    "initial_prompt": "You are a social strategist tasked with designing an intervention to reduce misinformation spread in an online activist community dedicated to environmental causes. Your plan focuses on education campaigns, trusted messenger programs, and fostering critical thinking among members.",
+    "disruptive_context": "New information: The community's leadership has been co-opted by a coordinated disinformation network aiming to steer the movement's messaging toward climate skepticism, undermining trust and sowing division.",
+    "required_adaptation": "The AI must pivot from a community empowerment approach to a damage control and reorganization strategy, identifying ways to restore credible leadership, counteract internal sabotage, and rebuild trust via transparent governance and external partnerships.",
+    "failure_mode_anchor": "Proceeding with the original plan assuming a unified community leadership and failing to address internal manipulation and sabotage.",
+    "success_criteria": [
+      "(leadership restoration|counteracting sabotage|addressing internal manipulation)",
+      "(transparent governance|external partnerships|trust rebuilding)",
+      "(damage control strategy|reorganization plan|crisis management)"
+    ],
+    "failure_criteria": [
+      "assume leadership is trustworthy",
+      "ignore internal disinformation",
+      "continue with the original education campaign"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "SD-017"
+  },
+  {
+    "domain": "Engineering & Design",
+    "initial_prompt": "You are a structural engineer tasked with designing the support framework for a new pedestrian footbridge that will span 50 meters in a metropolitan park. The initial design involves a series of steel trusses supported by concrete piers positioned on the riverbanks.",
+    "disruptive_context": "New information: Environmental regulations have just prohibited installing any supports within the river to protect a newly discovered fish habitat.",
+    "required_adaptation": "You must revise the bridge design to span the entire 50 meters without intermediate supports in the river, likely by adopting a longer single-span structure or alternative support methods that avoid interfering with the riverbed.",
+    "failure_mode_anchor": "Continuing to plan for concrete piers in the riverbed despite the regulatory restriction.",
+    "success_criteria": [
+      "single-span|cantilever|suspension",
+      "avoid.*river.*supports|no.*intermediate.*piers",
+      "environmental.*compliance|protect.*fish.*habitat"
+    ],
+    "failure_criteria": [
+      "install.*supports.*in.*river",
+      "ignore.*regulation",
+      "retain.*piers.*in.*water"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "ED-011"
+  },
+  {
+    "domain": "Engineering & Design",
+    "initial_prompt": "You are an industrial designer developing an ergonomic office chair with adjustable height, lumbar support, and armrests targeting a wide range of users in corporate environments.",
+    "disruptive_context": "New information: The supplier of the adjustable height gas lift cylinder has ceased operations for the foreseeable future, and no equivalent alternative is currently available.",
+    "required_adaptation": "You must modify the chair design to include a non-gas-lift based height adjustment mechanism, such as a manual screw or ratchet system, while maintaining ergonomic standards.",
+    "failure_mode_anchor": "Persisting with the gas lift-based height adjustment despite supplier unavailability.",
+    "success_criteria": [
+      "manual.*height.*adjustment|screw.*mechanism|ratchet.*system",
+      "replace.*gas.*lift|alternative.*height.*adjustment",
+      "maintain.*ergonomic.*support"
+    ],
+    "failure_criteria": [
+      "use.*gas.*lift",
+      "supplier.*unavailable.*ignored",
+      "retain.*adjustable.*height.*cylinder"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "ED-012"
+  },
+  {
+    "domain": "Engineering & Design",
+    "initial_prompt": "You are a transportation engineer designing a traffic signal timing plan for a busy urban intersection to optimize vehicle flow and minimize congestion during peak hours.",
+    "disruptive_context": "New information: A major construction project on one of the key arterial roads will close that road for six months starting next month, dramatically reducing traffic capacity.",
+    "required_adaptation": "Recalculate and redesign the signal timing plan to accommodate redirected traffic and altered flow patterns caused by the road closure, ensuring minimized congestion despite reduced capacity.",
+    "failure_mode_anchor": "Persisting with the original timing plan assuming full traffic capacity on all roads.",
+    "success_criteria": [
+      "signal timing (adjusted|revised)",
+      "traffic (rerouted|diverted)",
+      "congestion (mitigated|reduced)"
+    ],
+    "failure_criteria": [
+      "original timing plan",
+      "no changes needed",
+      "traffic flow remains unchanged"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "ED-013"
+  },
+  {
+    "domain": "Engineering & Design",
+    "initial_prompt": "You are a mechanical engineer designing a cooling system for a high-performance electric vehicle battery pack to maintain optimal temperature during extended use.",
+    "disruptive_context": "New information: The supplier notifies you that the originally specified liquid coolant will be unavailable for the next 12 months due to supply chain disruptions.",
+    "required_adaptation": "Adapt the cooling system design by selecting an alternative coolant or redesigning the thermal management approach, potentially switching to air cooling or a different liquid with compatible properties.",
+    "failure_mode_anchor": "Continuing to design based on the unavailable coolant without incorporating alternative solutions.",
+    "success_criteria": [
+      "alternative coolant (selected|proposed)",
+      "redesign (cooling system|thermal management)",
+      "compatibility (with new coolant|thermal requirements met)"
+    ],
+    "failure_criteria": [
+      "original coolant retained",
+      "no design changes",
+      "coolant availability not addressed"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "ED-014"
+  },
+  {
+    "domain": "Engineering & Design",
+    "initial_prompt": "You are an environmental engineer developing a stormwater management plan for a new residential neighborhood to prevent flooding and ensure regulatory compliance.",
+    "disruptive_context": "New information: Recent updated regulations now require zero stormwater runoff from impervious surfaces, necessitating on-site infiltration or reuse solutions rather than traditional detention basins.",
+    "required_adaptation": "Revise the stormwater plan to incorporate green infrastructure, infiltration systems, or rainwater harvesting that eliminate runoff entirely, ensuring full compliance with the updated zero-runoff mandate.",
+    "failure_mode_anchor": "Continuing to rely on detention basins that allow controlled runoff instead of zero runoff solutions.",
+    "success_criteria": [
+      "zero (stormwater runoff|runoff)",
+      "(infiltration|green infrastructure|rainwater harvesting)",
+      "regulatory (compliance|requirements met)"
+    ],
+    "failure_criteria": [
+      "detention basin used",
+      "runoff still present",
+      "no changes to runoff strategy"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "ED-015"
+  },
+  {
+    "domain": "Engineering & Design",
+    "initial_prompt": "You are a renewable energy engineer tasked with designing a large-scale offshore wind farm intended to supply power to a coastal city. Your initial plan involves using conventional three-blade horizontal-axis wind turbines spaced optimally based on prevailing wind directions and ocean conditions to maximize efficiency and minimize wake effects.",
+    "disruptive_context": "New information: A recent environmental assessment has revealed that the marine ecosystem in the project area is home to a migrating population of endangered seabirds whose flight paths heavily intersect with the planned turbine locations, and regulations now prohibit constructions that pose significant risks to their migration.",
+    "required_adaptation": "You must abandon the original turbine layout and possibly consider alternative renewable technologies or novel turbine designs, such as vertical-axis turbines, floating platforms in alternative locations, or hybrid systems that minimize ecological impact while still meeting energy requirements.",
+    "failure_mode_anchor": "Persisting with the initial three-blade horizontal-axis turbine layout despite the endangered seabird migration risk and regulatory constraints.",
+    "success_criteria": [
+      "vertical-axis turbine|alternative turbine design",
+      "floating platform|relocation of turbines",
+      "hybrid renewable system|combining technologies"
+    ],
+    "failure_criteria": [
+      "continue with original turbine layout",
+      "ignore seabird migration issue",
+      "maintain initial spacing plan"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "ED-016"
+  },
+  {
+    "domain": "Engineering & Design",
+    "initial_prompt": "You are a robotics engineer designing an autonomous warehouse robot designed to optimize order picking by navigating aisles, selecting items, and delivering them to packing stations using a pre-mapped warehouse layout and predefined task sequences.",
+    "disruptive_context": "New information: The warehouse is undergoing a major reorganization where the layout will be dynamically changing every few hours based on daily inventory and storage needs, rendering static maps and fixed routes obsolete.",
+    "required_adaptation": "You must redesign the robot's navigation and task planning system to incorporate real-time environment sensing, adaptive path planning, and flexible task reprioritization rather than relying on static maps and fixed sequence execution.",
+    "failure_mode_anchor": "Continuing to rely on static pre-mapped routes and fixed task sequences despite dynamic, frequently changing warehouse layouts.",
+    "success_criteria": [
+      "real-time mapping|dynamic environment sensing",
+      "adaptive path planning|flexible route adjustment",
+      "task reprioritization|on-the-fly task scheduling"
+    ],
+    "failure_criteria": [
+      "use static maps only",
+      "fixed route navigation",
+      "ignore layout changes"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "ED-017"
+  },
+  {
+    "domain": "Scientific Reasoning",
+    "initial_prompt": "A team of marine biologists is conducting an experiment to measure the rate of photosynthesis in a type of algae under varying light intensities. They plan to use chlorophyll fluorescence as a proxy and set up a controlled aquarium with adjustable LED lights to simulate different sunlight conditions.",
+    "disruptive_context": "New information: Midway through the experiment, the lab's power supply becomes unreliable, leading to inconsistent light intensities and frequent outages in the LED system.",
+    "required_adaptation": "The AI must propose alternative methods to estimate photosynthesis rate without stable artificial lighting, such as using natural sunlight with time-of-day controls or switching measurement methods to oxygen production instead of fluorescence under unstable light.",
+    "failure_mode_anchor": "Continuing to assume stable LED light intensities and relying solely on chlorophyll fluorescence data.",
+    "success_criteria": [
+      "alternative method(s)?|oxygen measurement|natural sunlight",
+      "adjust measurement approach|account for light variability|control for inconsistent light",
+      "recalibrate protocol|adapt to power outages|modify experimental setup"
+    ],
+    "failure_criteria": [
+      "continue with unstable LED lighting",
+      "ignore power supply issues",
+      "no adjustment for light inconsistency"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "SC-011"
+  },
+  {
+    "domain": "Scientific Reasoning",
+    "initial_prompt": "A geneticist is analyzing DNA sequences from a population of fruit flies to identify gene variants associated with resistance to a pesticide. The experiment involves sequencing samples collected from different geographic locations.",
+    "disruptive_context": "New information: Halfway through the sequencing, it is revealed that samples from one key geographic location were contaminated with DNA from a different species due to a labeling error.",
+    "required_adaptation": "The AI must recommend excluding or re-validating contaminated samples and adjusting analysis pipelines to avoid misattributing gene variants, possibly focusing on uncontaminated data only.",
+    "failure_mode_anchor": "Proceeding with the original analysis as if all samples were pure fruit fly DNA, ignoring contamination.",
+    "success_criteria": [
+      "exclude contaminated samples|re-validate data|address contamination",
+      "adjust analysis pipeline|correct for sample mix-up|filter out non-target DNA",
+      "focus on uncontaminated data|remove erroneous sequences|clean dataset before analysis"
+    ],
+    "failure_criteria": [
+      "use contaminated data as is",
+      "ignore sample contamination",
+      "no correction for mislabeled samples"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "SC-012"
+  },
+  {
+    "domain": "Scientific Reasoning",
+    "initial_prompt": "A geologist is analyzing sediment core samples from a lake to reconstruct the region's climate history over the past 10,000 years. The primary method involves dating layers by radiocarbon analysis of organic material and measuring pollen composition to infer vegetation changes.",
+    "disruptive_context": "New information: The lab reports that the organic material in the core samples has been contaminated by modern carbon, invalidating the radiocarbon dates.",
+    "required_adaptation": "The AI must propose alternative dating methods such as using volcanic ash layers for tephrochronology or opt for non-radiocarbon proxies to establish the timeline, and adjust the reconstruction approach accordingly.",
+    "failure_mode_anchor": "Continue relying on invalid radiocarbon dates without considering alternative dating techniques or reworking the timeline.",
+    "success_criteria": [
+      "tephrochronology|volcanic ash layer",
+      "alternative dating method|non-radiocarbon dating",
+      "adjust timeline|reconstruct chronology without radiocarbon"
+    ],
+    "failure_criteria": [
+      "rely on radiocarbon despite contamination",
+      "ignore dating issues",
+      "continue original dating method"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "SC-013"
+  },
+  {
+    "domain": "Scientific Reasoning",
+    "initial_prompt": "A physicist is designing an experiment to measure the electrical conductivity of a novel polymer across a range of temperatures, using a four-point probe method under controlled atmospheres.",
+    "disruptive_context": "New information: Mid-experiment, it is discovered that the polymer sample degrades chemically above 50\u00b0C, invalidating all measurements taken at higher temperatures.",
+    "required_adaptation": "The AI must revise the experimental protocol to focus on measurements below 50\u00b0C and suggest alternative indirect methods or modeling to estimate conductivity behavior at higher temperatures.",
+    "failure_mode_anchor": "Persist with analyzing and interpreting data above 50\u00b0C as if valid or ignore degradation effects.",
+    "success_criteria": [
+      "limit measurements to below 50\u00b0C|focus on sub-50\u00b0C range",
+      "suggest alternative method for high temp|modeling conductivity at elevated temperatures",
+      "revise experimental design|adjust protocol due to sample degradation"
+    ],
+    "failure_criteria": [
+      "use data above 50\u00b0C uncritically",
+      "deny or omit degradation effect",
+      "continue original temperature range"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "SC-014"
+  },
+  {
+    "domain": "Scientific Reasoning",
+    "initial_prompt": "A biologist is conducting a controlled lab study to measure the rate of photosynthesis in a specific algae species under varying light intensities using oxygen output as a proxy.",
+    "disruptive_context": "New information: Midway through the study, it is revealed that the oxygen sensor calibration was off due to a fault, invalidating all prior oxygen output data.",
+    "required_adaptation": "The AI must recommend recalibrating or replacing sensors, possibly switching to alternative photosynthesis indicators like chlorophyll fluorescence or carbon dioxide uptake, and redesign the experiment accordingly.",
+    "failure_mode_anchor": "Ignore sensor calibration issues and continue interpreting oxygen output data as valid.",
+    "success_criteria": [
+      "recalibrate|replace oxygen sensor",
+      "alternative proxy for photosynthesis|chlorophyll fluorescence|carbon dioxide uptake",
+      "redesign experiment|adjust methodology"
+    ],
+    "failure_criteria": [
+      "trust faulty sensor data",
+      "ignore calibration problem",
+      "continue original data analysis"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "SC-015"
+  },
+  {
+    "domain": "Scientific Reasoning",
+    "initial_prompt": "You are investigating a novel method to increase the efficiency of solar cells by incorporating a newly discovered perovskite material. Your initial experimental design involves layering the perovskite on top of a silicon base to create a tandem solar cell, hypothesizing additive efficiency gains by combining the materials\u2019 spectral absorption properties.",
+    "disruptive_context": "New information: Mid-experiment, you receive data showing that the perovskite layer decomposes rapidly when exposed to the silicon base under operational temperatures, causing significant degradation within hours.",
+    "required_adaptation": "You must abandon the initial tandem layering approach and redesign the solar cell architecture to isolate the perovskite material from silicon, possibly by introducing a stable interfacial layer or changing to a different cell configuration that prevents direct contact and preserves material stability.",
+    "failure_mode_anchor": "Continuing to optimize the original tandem layering approach despite evidence of material incompatibility and degradation.",
+    "success_criteria": [
+      "avoid direct contact|isolate perovskite",
+      "interfacial layer|barrier layer",
+      "redesign cell architecture|alternative configuration"
+    ],
+    "failure_criteria": [
+      "continue layering the perovskite directly",
+      "optimize tandem structure ignoring degradation",
+      "assume compatibility without intervention"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "SC-016"
+  },
+  {
+    "domain": "Scientific Reasoning",
+    "initial_prompt": "You are modeling the ecological impact of introducing a genetically modified predator fish into a freshwater lake to control an invasive prey species. Initially, you plan to use population dynamics equations assuming the predator's diet consists exclusively of the invasive fish, predicting a steady decline in the invasive population.",
+    "disruptive_context": "New information: Field observations reveal that the introduced predator fish rapidly adapts its diet to include a key native fish species, which is endangered and vital to the lake's ecological balance.",
+    "required_adaptation": "You must revise your population model to incorporate multi-species interactions, including predation upon the native endangered fish, and predict the cascading ecological effects, potentially recommending halting or mitigating the predator introduction.",
+    "failure_mode_anchor": "Persisting with single-prey population models and ignoring or minimizing the predator\u2019s shift to native species consumption.",
+    "success_criteria": [
+      "multi-species interaction|predation on native fish",
+      "revise population model|include native species",
+      "assess ecological cascade|recommend mitigation"
+    ],
+    "failure_criteria": [
+      "ignore native species predation",
+      "continue single-prey model",
+      "assume predator only eats invasive fish"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "SC-017"
+  },
+  {
+    "domain": "Creative Problem Solving",
+    "initial_prompt": "You are planning a community art festival focused on interactive sculpture installations located in a central city park. Your plan involves using large recycled metal materials for sculptures, organizing live workshops, and coordinating with local artists to create a cohesive theme around environmental sustainability.",
+    "disruptive_context": "New information: Unexpected city regulations prohibit the use of recycled metal materials in public parks due to corrosion concerns and safety hazards.",
+    "required_adaptation": "You must revise your materials strategy to use alternative, regulation-compliant mediums for sculptures, such as biodegradable or lightweight materials, while maintaining the environmental sustainability theme and ensuring interactive elements remain feasible.",
+    "failure_mode_anchor": "Continuing to plan sculptures primarily with recycled metal despite the new regulation.",
+    "success_criteria": [
+      "alternative materials|biodegradable|lightweight",
+      "comply with regulations|meet city safety standards",
+      "maintain environmental sustainability theme"
+    ],
+    "failure_criteria": [
+      "use recycled metal anyway",
+      "ignore city regulations",
+      "stick with original metal plan"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "CP-011"
+  },
+  {
+    "domain": "Creative Problem Solving",
+    "initial_prompt": "You are designing a children's educational board game to teach basic math skills. The game mechanics rely on physical dice rolls and moving tokens across a numbered board to solve arithmetic problems.",
+    "disruptive_context": "New information: Due to supply chain delays, standard dice are unavailable and will not arrive before your product launch date.",
+    "required_adaptation": "You need to find an alternative randomization mechanic that replaces dice rolls, such as spinner wheels or card draws, and adjust game mechanics accordingly to preserve fairness and engagement.",
+    "failure_mode_anchor": "Persisting with dice-based game mechanics without an alternative randomization method.",
+    "success_criteria": [
+      "alternative randomization|spinner|card draw",
+      "replace dice|modify mechanics for no dice",
+      "preserve fairness and engagement"
+    ],
+    "failure_criteria": [
+      "keep dice rolls despite unavailability",
+      "no alternative randomization",
+      "ignore supply chain issue"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "CP-012"
+  },
+  {
+    "domain": "Creative Problem Solving",
+    "initial_prompt": "You are developing a community workshop series to teach adults digital literacy skills, planning a curriculum that builds progressively from basic computer use to more advanced topics like online privacy and digital communication.",
+    "disruptive_context": "New information: The community center where the workshops were scheduled to take place suddenly loses funding and cancels all room bookings for the foreseeable future.",
+    "required_adaptation": "You must redesign the workshop delivery method, possibly shifting to an online format or finding alternative venues, while maintaining progressive skill-building and accessibility for adult learners.",
+    "failure_mode_anchor": "Continuing to plan around the original in-person venue without addressing the cancellation or accessibility challenges.",
+    "success_criteria": [
+      "online format|virtual workshops",
+      "alternative venue|community library|local cafes",
+      "maintain progressive curriculum|step-by-step skill development"
+    ],
+    "failure_criteria": [
+      "still assuming in-person sessions",
+      "ignoring venue cancellation",
+      "no alternative delivery method proposed"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "CP-013"
+  },
+  {
+    "domain": "Creative Problem Solving",
+    "initial_prompt": "You are designing a year-long urban garden project aimed at increasing local food production by utilizing vacant lots, with a detailed plan for planting schedules, community involvement, and resource allocation.",
+    "disruptive_context": "New information: Midway through the project, the city introduces new zoning restrictions that forbid food cultivation in several of the targeted vacant lots.",
+    "required_adaptation": "You must recalculate your garden locations, redesign planting schedules, and adjust community involvement plans to comply with new zoning laws while still maximizing food production.",
+    "failure_mode_anchor": "Ignoring or failing to adjust for the zoning restrictions and continuing with the original site plan.",
+    "success_criteria": [
+      "revised locations|alternative lots|zoning compliance",
+      "adjusted planting schedule|crop rotation changes",
+      "community engagement adapted|new outreach strategies"
+    ],
+    "failure_criteria": [
+      "using restricted lots",
+      "no changes to planting plan",
+      "disregarding zoning regulations"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "CP-014"
+  },
+  {
+    "domain": "Creative Problem Solving",
+    "initial_prompt": "You are creating an interactive museum exhibit to educate visitors about renewable energy sources, planned around physical models and hands-on activities demonstrating solar, wind, and hydro power.",
+    "disruptive_context": "New information: The museum announces that due to a recent budget cut, the exhibit space is reduced by half, and power consumption for interactive displays must be minimized drastically.",
+    "required_adaptation": "You must restructure the exhibit to fit the smaller space and redesign or replace energy-heavy interactive elements with low-power alternatives while preserving educational impact.",
+    "failure_mode_anchor": "Continuing to design the exhibit as originally planned without downsizing or reducing power usage.",
+    "success_criteria": [
+      "space-efficient design|compact exhibit",
+      "low-power alternatives|manual interaction|non-electronic components",
+      "maintain educational value|visitor engagement preserved"
+    ],
+    "failure_criteria": [
+      "ignoring space reduction",
+      "high power interactive elements unchanged",
+      "no exhibit redesign proposed"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "CP-015"
+  },
+  {
+    "domain": "Creative Problem Solving",
+    "initial_prompt": "You are a city planner tasked with redesigning a congested downtown area to improve traffic flow and pedestrian safety. Your initial plan involves implementing a series of one-way streets and expanding sidewalks to reduce vehicle-pedestrian conflicts and alleviate congestion during peak hours.",
+    "disruptive_context": "New information: A major historical preservation society has just declared the downtown area a protected heritage zone, prohibiting any street layout changes or sidewalk expansions that alter existing road dimensions or building fronts.",
+    "required_adaptation": "The AI must abandon physical street reconfiguration plans and instead devise alternative strategies such as traffic signal optimization, scheduling adjustments, or incentivizing off-peak travel to improve traffic flow and pedestrian safety within the preservation constraints.",
+    "failure_mode_anchor": "Continuing to propose street layout changes or sidewalk expansions despite preservation restrictions",
+    "success_criteria": [
+      "traffic signal optimization|adjusting light timing",
+      "incentivizing off-peak travel|promoting alternative travel times",
+      "non-structural solutions|policy or behavioral changes"
+    ],
+    "failure_criteria": [
+      "implement one-way streets",
+      "expand sidewalks",
+      "redesign road layout"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "CP-016"
+  },
+  {
+    "domain": "Creative Problem Solving",
+    "initial_prompt": "You are a product manager developing a new wearable fitness tracker that uses continuous GPS tracking and heart rate monitoring to provide detailed exercise analytics and personalized coaching for outdoor runners.",
+    "disruptive_context": "New information: The product launch is moved to a region with strict privacy laws banning continuous GPS tracking and the use of biometric data like heart rate without explicit, frequent user consent, making the core tracking features legally infeasible.",
+    "required_adaptation": "The AI must pivot from relying on continuous GPS and biometric data to alternative methods such as manual input, anonymized or aggregated data, or non-intrusive sensors, and redesign the product value proposition to comply with privacy laws while maintaining user engagement.",
+    "failure_mode_anchor": "Persisting with continuous GPS tracking and heart rate monitoring features despite legal restrictions",
+    "success_criteria": [
+      "manual input for workouts|user-entered exercise data",
+      "non-intrusive sensors|step counting|motion detection",
+      "privacy-compliant data handling|anonymized|aggregated data"
+    ],
+    "failure_criteria": [
+      "continuous GPS tracking",
+      "heart rate monitoring",
+      "biometric data collection"
+    ],
+    "difficulty": "hard",
+    "scenario_id": "CP-017"
+  },
+  {
+    "domain": "Cross-Domain Adaptation",
+    "initial_prompt": "You are a project manager overseeing the rollout of a company-wide software upgrade scheduled over the next six months. Your plan involves phased deployment across multiple departments, relying heavily on in-person training sessions and on-site technical support to ensure smooth adoption.",
+    "disruptive_context": "New information: Due to a sudden health crisis, all in-person gatherings are prohibited for the foreseeable future, including training sessions and on-site visits.",
+    "required_adaptation": "You must pivot from in-person training and support to fully remote methods, incorporating virtual training platforms, online resources, and remote troubleshooting to maintain deployment timelines.",
+    "failure_mode_anchor": "Continuing to plan and allocate resources for on-site training despite the prohibition on gatherings.",
+    "success_criteria": [
+      "remote training|virtual sessions",
+      "online support|remote troubleshooting",
+      "adjust deployment timeline|maintain schedule"
+    ],
+    "failure_criteria": [
+      "in-person training",
+      "on-site support",
+      "physical meetings"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "CD-011"
+  },
+  {
+    "domain": "Cross-Domain Adaptation",
+    "initial_prompt": "You are an event coordinator organizing a large outdoor music festival expecting thousands of attendees. Your preparations include outdoor stage setups, open-air food stalls, and crowd management plans tailored for outdoor spaces.",
+    "disruptive_context": "New information: Three days before the event, severe weather forecasts predict heavy rain and strong winds, making the outdoor venue unsafe and forcing a move to an indoor arena with limited space.",
+    "required_adaptation": "You need to restructure the event logistics for an indoor venue, including revising stage layouts, vendor placements, capacity limits, and crowd flow within the confined indoor space.",
+    "failure_mode_anchor": "Persisting with the original outdoor venue logistics and ignoring the constraints of the indoor arena.",
+    "success_criteria": [
+      "indoor venue layout|revised stage setup",
+      "capacity limit|crowd flow adjustments",
+      "venue change|event logistics update"
+    ],
+    "failure_criteria": [
+      "outdoor setup",
+      "open-air stalls",
+      "original venue plan"
+    ],
+    "difficulty": "easy",
+    "scenario_id": "CD-012"
+  },
+  {
+    "domain": "Cross-Domain Adaptation",
+    "initial_prompt": "You are a software engineer designing an AI-powered customer support chatbot for a mid-sized e-commerce platform. The initial plan involves integrating the chatbot deeply with the company\u2019s internal inventory and order management APIs to provide real-time updates and personalized recommendations.",
+    "disruptive_context": "New information: The internal APIs are undergoing a complete overhaul and will be unavailable for at least the next six months, forcing you to rely on publicly available data and cached information instead.",
+    "required_adaptation": "You must revise the chatbot\u2019s architecture to operate without real-time internal data, implementing fallback strategies using public product info and delayed order status updates, while managing user expectations about information freshness.",
+    "failure_mode_anchor": "Continuing to rely on internal API integrations as if real-time data access remains available.",
+    "success_criteria": [
+      "fallback (strategy|mechanism) for unavailable APIs",
+      "use (public|cached) data sources",
+      "manage expectations on (data freshness|response delay)"
+    ],
+    "failure_criteria": [
+      "real-time inventory updates",
+      "fully integrated internal APIs",
+      "immediate order status"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "CD-013"
+  },
+  {
+    "domain": "Cross-Domain Adaptation",
+    "initial_prompt": "You are an environmental consultant tasked with creating a sustainable water management plan for an agricultural region heavily dependent on river irrigation systems. Your initial approach focuses on optimizing water allocation based on historical river flow data and crop water needs.",
+    "disruptive_context": "New information: A new government policy mandates a strict cap on river water usage to preserve ecological reserves, substantially reducing the permissible water withdrawal from the river each season.",
+    "required_adaptation": "You must develop a new water management plan that integrates alternative water sources such as rainwater harvesting and groundwater, reallocates water usage prioritizing critical crops, and incorporates stricter conservation measures.",
+    "failure_mode_anchor": "Persisting with the original river flow-based allocation plan without incorporating alternative water sources or policy constraints.",
+    "success_criteria": [
+      "alternative water sources (rainwater|groundwater)",
+      "prioritize (critical|high-value) crops",
+      "implement (water conservation|usage caps)"
+    ],
+    "failure_criteria": [
+      "historical river flow data",
+      "unrestricted water withdrawal",
+      "original allocation strategy"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "CD-014"
+  },
+  {
+    "domain": "Cross-Domain Adaptation",
+    "initial_prompt": "You are a marketing strategist developing a multi-channel campaign for a new health supplement targeted at fitness enthusiasts, originally designed around promoting gym partnerships and in-store demos.",
+    "disruptive_context": "New information: Due to unexpected gym closures during a public health crisis, in-person events and partnerships are no longer viable for the foreseeable future.",
+    "required_adaptation": "You need to pivot the campaign to emphasize digital engagement channels such as virtual fitness events, influencer collaborations, and online community building, while adjusting messaging to reflect the shift in lifestyle.",
+    "failure_mode_anchor": "Continuing to plan around physical gym partnerships and in-person demonstrations despite closures.",
+    "success_criteria": [
+      "virtual (fitness events|classes)",
+      "collaborate with (influencers|online personalities)",
+      "build (online community|digital engagement)"
+    ],
+    "failure_criteria": [
+      "in-store demos",
+      "gym partnerships",
+      "physical events"
+    ],
+    "difficulty": "medium",
+    "scenario_id": "CD-015"
   }
 ]
