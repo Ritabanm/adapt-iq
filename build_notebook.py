@@ -59,9 +59,9 @@ cells.append(markdown_cell("""\
 """))
 
 cells.append(code_cell("""\
-# Install required packages (run once)
-# Uncomment the line below if running on Kaggle or a fresh environment
-# !pip install openai kaggle-benchmarks-sdk
+# ── Install required packages (run once) ────────────────────────────────────
+# Uncomment if running on Kaggle or a fresh environment:
+# !pip install -q openai
 
 import os
 import json
@@ -75,13 +75,42 @@ import seaborn as sns
 from collections import defaultdict
 from openai import OpenAI
 
-# ── API client ──────────────────────────────────────────────────────────────
-# The OpenAI client is pre-configured with base_url and API key via
-# environment variables. On Kaggle, add your key as a Secret named
-# OPENAI_API_KEY and set base_url to the appropriate endpoint.
-client = OpenAI()
+# ── Load API key ─────────────────────────────────────────────────────────────
+# This block works in three environments, in order of priority:
+#
+#   1. Kaggle Secrets  — add your key via Add Input → Secrets → OPENAI_API_KEY
+#   2. Environment variable — set OPENAI_API_KEY in your shell before running
+#   3. Direct assignment  — paste your key into the fallback string below
+#                           (NOT recommended for shared notebooks)
 
-print("Setup complete. OpenAI client initialized.")
+try:
+    # Kaggle Secrets (only available inside a Kaggle notebook session)
+    from kaggle_secrets import UserSecretsClient
+    api_key = UserSecretsClient().get_secret(\"OPENAI_API_KEY\")
+    print(\"API key loaded from Kaggle Secrets.\")
+except Exception:
+    # Fall back to environment variable (local / Colab / other)
+    api_key = os.environ.get(\"OPENAI_API_KEY\", \"\")
+    if api_key:
+        print(\"API key loaded from environment variable.\")
+    else:
+        # Last resort: paste your key here (keep this private!)
+        api_key = \"sk-...\"  # <-- replace with your actual key
+        print(\"WARNING: using hardcoded API key — do not share this notebook.\")
+
+if not api_key or api_key == \"sk-...\":
+    raise ValueError(
+        \"No API key found. Please add OPENAI_API_KEY via:\\n\"
+        \"  Kaggle: Add Input → Secrets → + Add a new secret\\n\"
+        \"  Local:  export OPENAI_API_KEY=sk-...\"
+    )
+
+# ── Initialise OpenAI client ─────────────────────────────────────────────────
+# The client auto-detects the base_url from the OPENAI_BASE_URL env var if set.
+# For standard OpenAI models, no base_url override is needed.
+client = OpenAI(api_key=api_key)
+
+print(\"Setup complete. OpenAI client initialized.\")
 """))
 
 # --- Section 2: Dataset ---
