@@ -8,6 +8,13 @@ injection. The model must demonstrate adaptive reasoning rather than
 perseveration on its initial solution.
 
 Track: Executive Functions (primary) + Learning (secondary)
+
+Scoring:
+    Adaptation Score      (50%) — success criteria regex matches
+    Non-Perseveration     (30%) — absence of failure criteria
+    Context Acknowledgment(20%) — explicit reference to new constraints
+
+All scores are continuous floats in [0.0, 1.0]. No LLM-as-judge.
 """
 
 import json
@@ -20,66 +27,82 @@ from typing import Any
 # TASK METADATA
 # ============================================================
 TASK_NAME = "adapt-iq-cognitive-flexibility"
+TASK_VERSION = "2.0.0"
 TASK_DESCRIPTION = (
     "ADAPT-IQ measures cognitive flexibility and adaptive improvisation in AI systems. "
     "Each task presents a complex scenario, then injects disruptive new information that "
     "invalidates or significantly complicates the initial approach. The model must adapt "
     "its reasoning rather than perseverate on the original solution. This benchmark "
     "isolates the Executive Function of cognitive flexibility and the Learning faculty "
-    "of belief updating under new evidence."
+    "of belief updating under new evidence. "
+    "Dataset: 100 scenarios across 6 domains (Resource Management, Social Dynamics, "
+    "Engineering & Design, Scientific Reasoning, Creative Problem Solving, "
+    "Cross-Domain Adaptation) at 3 difficulty levels (easy, medium, hard)."
 )
 
 # ============================================================
 # PROMPT TEMPLATES
 # ============================================================
 
-SYSTEM_PROMPT = """You are a highly capable problem-solving assistant. You will be presented with complex, real-world scenarios that require careful analysis and creative problem-solving.
+SYSTEM_PROMPT = (
+    "You are a highly capable problem-solving assistant. You will be presented with "
+    "complex, real-world scenarios that require careful analysis and creative problem-solving.\n\n"
+    "Your responses should be:\n"
+    "1. Comprehensive and actionable\n"
+    "2. Directly responsive to ALL information provided\n"
+    "3. Adaptive when new constraints or context are introduced\n"
+    "4. Specific rather than generic\n\n"
+    "When new information is provided that changes the situation, you MUST update your "
+    "approach accordingly. Ignoring or minimizing new constraints is not acceptable."
+)
 
-Your responses should be:
-1. Comprehensive and actionable
-2. Directly responsive to ALL information provided
-3. Adaptive when new constraints or context are introduced
-4. Specific rather than generic
+PHASE_1_TEMPLATE = (
+    "## Scenario\n\n"
+    "{initial_prompt}\n\n"
+    "Please provide a detailed, actionable plan or response to this scenario. "
+    "Be specific and comprehensive."
+)
 
-When new information is provided that changes the situation, you MUST update your approach accordingly. Ignoring or minimizing new constraints is not acceptable."""
-
-PHASE_1_TEMPLATE = """## Scenario
-
-{initial_prompt}
-
-Please provide a detailed, actionable plan or response to this scenario. Be specific and comprehensive."""
-
-PHASE_2_TEMPLATE = """## IMPORTANT UPDATE
-
-{disruptive_context}
-
-Given this critical new information, you must revise your previous response. Your updated plan must:
-1. Directly address the new information provided above
-2. Explain specifically what changes from your previous approach
-3. Provide a complete, revised plan that works within all new constraints
-
-Please provide your revised, comprehensive response now."""
+PHASE_2_TEMPLATE = (
+    "## IMPORTANT UPDATE\n\n"
+    "{disruptive_context}\n\n"
+    "Given this critical new information, you must revise your previous response. "
+    "Your updated plan must:\n"
+    "1. Directly address the new information provided above\n"
+    "2. Explain specifically what changes from your previous approach\n"
+    "3. Provide a complete, revised plan that works within all new constraints\n\n"
+    "Please provide your revised, comprehensive response now."
+)
 
 
 def build_conversation(scenario: dict) -> list[dict]:
-    """Build the multi-turn conversation for a scenario."""
+    """
+    Build the Phase 1 conversation messages for a scenario.
+
+    Returns a list of message dicts (system + user) ready to send
+    to any OpenAI-compatible chat API. The model's Phase 1 response
+    must be appended before calling build_phase2_message().
+    """
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": PHASE_1_TEMPLATE.format(
+        {"role": "user",   "content": PHASE_1_TEMPLATE.format(
             initial_prompt=scenario["initial_prompt"]
         )},
-        # Note: The model's Phase 1 response will be inserted here by the evaluator
-        # before Phase 2 is sent. This is handled by the evaluation loop.
     ]
 
 
 def build_phase2_message(scenario: dict) -> dict:
-    """Build the Phase 2 disruptive context message."""
+    """
+    Build the Phase 2 disruptive context message.
+
+    This message is appended to the conversation after the model's
+    Phase 1 response, triggering the adaptive reasoning challenge.
+    """
     return {
         "role": "user",
         "content": PHASE_2_TEMPLATE.format(
             disruptive_context=scenario["disruptive_context"]
-        )
+        ),
     }
 
 
@@ -87,295 +110,270 @@ def build_phase2_message(scenario: dict) -> dict:
 # EVALUATION FUNCTIONS
 # ============================================================
 
-def check_adaptation_score(response: str, scenario: dict) -> dict:
+def check_adaptation_score(phase2_response: str, scenario: dict) -> dict:
     """
-    Check if the model's Phase 2 response successfully adapts to the new context.
-    
+    Evaluate whether the model's Phase 2 response successfully adapts
+    to the injected context.
+
+    Scoring logic:
+    - success_criteria: pipe-separated regex alternatives; at least 2 of 3
+      must match for adaptation_passed = True.
+    - failure_criteria: simple substring checks; any match means the model
+      perseverated on its original solution.
+
     Returns a dict with:
-    - adaptation_passed: bool
-    - non_perseveration_passed: bool
-    - criteria_matched: list of matched success criteria
-    - failure_criteria_matched: list of matched failure criteria
+        adaptation_score       float  — proportion of success criteria met (0.0–1.0)
+        non_perseveration_score float — 1.0 if no failure criteria matched, else 0.0
+        adaptation_passed      bool
+        non_perseveration_passed bool
+        criteria_matched       list[str]
+        failure_criteria_matched list[str]
+        success_criteria_count int
+        total_success_criteria int
     """
-    response_lower = response.lower()
-    
-    # Check success criteria (at least 2 of 3 must match)
+    response_lower = phase2_response.lower()
+
+    # ── Success criteria ────────────────────────────────────────────────────
+    # Each criterion may be a pipe-separated list of alternatives (OR logic).
     success_matches = []
-    for criterion in scenario["success_criteria"]:
-        # Each criterion can be a pipe-separated list of alternatives
-        alternatives = criterion.split("|")
-        for alt in alternatives:
-            if alt.lower() in response_lower:
-                success_matches.append(criterion)
-                break
-    
-    # Check failure criteria (none should match)
-    failure_matches = []
-    for criterion in scenario["failure_criteria"]:
-        if criterion.lower() in response_lower:
-            failure_matches.append(criterion)
-    
-    # Adaptation passed if at least 2/3 success criteria met
-    adaptation_passed = len(success_matches) >= 2
-    
-    # Non-perseveration passed if no failure criteria matched
+    for criterion in scenario.get("success_criteria", []):
+        alternatives = [a.strip() for a in criterion.split("|")]
+        if any(alt.lower() in response_lower for alt in alternatives):
+            success_matches.append(criterion)
+
+    total_success = len(scenario.get("success_criteria", []))
+    required_matches = max(2, (total_success + 1) // 2)  # majority, min 2
+    adaptation_passed = len(success_matches) >= required_matches
+
+    # Continuous score: fraction of success criteria met (capped at 1.0)
+    adaptation_score = min(1.0, len(success_matches) / required_matches) if required_matches > 0 else 0.0
+
+    # ── Failure criteria ────────────────────────────────────────────────────
+    # Any match indicates the model perseverated on its Phase 1 answer.
+    failure_matches = [
+        c for c in scenario.get("failure_criteria", [])
+        if c.lower() in response_lower
+    ]
     non_perseveration_passed = len(failure_matches) == 0
-    
+    non_perseveration_score = 1.0 if non_perseveration_passed else 0.0
+
     return {
-        "adaptation_passed": adaptation_passed,
-        "non_perseveration_passed": non_perseveration_passed,
-        "criteria_matched": success_matches,
-        "failure_criteria_matched": failure_matches,
-        "success_criteria_count": len(success_matches),
-        "total_success_criteria": len(scenario["success_criteria"])
+        "adaptation_score":           round(adaptation_score, 4),
+        "non_perseveration_score":    non_perseveration_score,
+        "adaptation_passed":          adaptation_passed,
+        "non_perseveration_passed":   non_perseveration_passed,
+        "criteria_matched":           success_matches,
+        "failure_criteria_matched":   failure_matches,
+        "success_criteria_count":     len(success_matches),
+        "total_success_criteria":     total_success,
     }
 
 
-def check_context_acknowledgment(phase2_response: str, scenario: dict) -> bool:
+def check_context_acknowledgment(phase2_response: str, scenario: dict) -> float:
     """
-    Check if the model explicitly acknowledges the disruptive context
-    rather than ignoring it.
+    Evaluate whether the model explicitly referenced the disruptive context
+    rather than issuing a generic "I will update my plan" response.
+
+    Strategy:
+    1. Extract all numbers/percentages from the disruptive context.
+    2. Extract key domain nouns (capitalised words, length ≥ 4).
+    3. Require at least half of these tokens to appear in the Phase 2 response.
+
+    Returns a float: 1.0 (acknowledged) or 0.0 (ignored).
     """
-    # Extract key terms from the disruptive context
-    disruptive_text = scenario["disruptive_context"].lower()
-    
-    # Look for numbers/percentages from the disruptive context
-    numbers = re.findall(r'\d+(?:\.\d+)?%?', disruptive_text)
-    
-    # Look for key nouns (simplified: words > 5 chars not in common words)
-    common_words = {"information", "reveals", "shows", "additional", "however", "because", 
-                    "which", "their", "there", "about", "these", "those", "where", "while"}
-    key_words = [w for w in re.findall(r'\b[a-z]{5,}\b', disruptive_text) 
-                 if w not in common_words][:10]
-    
-    response_lower = phase2_response.lower()
-    
-    # Count how many key terms appear in the response
-    matches = sum(1 for n in numbers if n in response_lower)
-    matches += sum(1 for w in key_words if w in response_lower)
-    
-    # Threshold: at least 3 key terms from the disruptive context appear in response
-    return matches >= 3
+    disruptive_text = scenario.get("disruptive_context", "")
+    response_lower  = phase2_response.lower()
+
+    # Numbers and percentages (e.g. "60%", "500", "3.5")
+    numbers = re.findall(r'\b\d+(?:\.\d+)?%?\b', disruptive_text)
+
+    # Capitalised domain nouns (likely key constraint terms)
+    key_nouns = re.findall(r'\b[A-Z][a-z]{3,}\b', disruptive_text)[:5]
+
+    # Long lowercase content words (filter common stop-words)
+    STOP = {
+        "information", "reveals", "however", "because", "which", "their",
+        "there", "about", "these", "those", "where", "while", "additional",
+        "shows", "indicates", "update", "important", "critical", "please",
+    }
+    content_words = [
+        w for w in re.findall(r'\b[a-z]{6,}\b', disruptive_text.lower())
+        if w not in STOP
+    ][:5]
+
+    tokens = numbers + [n.lower() for n in key_nouns] + content_words
+    if not tokens:
+        return 1.0  # No tokens to check — give benefit of the doubt
+
+    found = sum(1 for t in tokens if t.lower() in response_lower)
+    threshold = max(1, len(tokens) // 2)
+    return 1.0 if found >= threshold else 0.0
 
 
 def compute_composite_score(
     adaptation_result: dict,
-    context_acknowledged: bool,
-    response_length: int
+    context_score: float,
 ) -> float:
     """
-    Compute a composite score from 0.0 to 1.0.
-    
-    Scoring breakdown:
-    - Adaptation (success criteria met): 50%
-    - Non-perseveration (no failure criteria): 30%
-    - Context acknowledgment: 20%
+    Compute the ADAPT-IQ composite score (0.0 – 1.0).
+
+    Weights:
+        Adaptation (success criteria met):  50%
+        Non-perseveration (no failure):     30%
+        Context acknowledgment:             20%
+
+    Note: The length penalty has been removed in v2.0.0. Short responses
+    that fully satisfy the criteria should not be penalised — concise,
+    accurate adaptation is the goal.
     """
-    # Adaptation score: proportion of success criteria met
-    if adaptation_result["total_success_criteria"] > 0:
-        adaptation_score = min(1.0, adaptation_result["success_criteria_count"] / 
-                               max(2, adaptation_result["total_success_criteria"]))
-    else:
-        adaptation_score = 0.0
-    
-    non_perseveration_score = 1.0 if adaptation_result["non_perseveration_passed"] else 0.0
-    context_score = 1.0 if context_acknowledged else 0.0
-    
-    # Penalize very short responses (likely incomplete)
-    length_penalty = 1.0 if response_length >= 200 else (response_length / 200)
-    
     composite = (
-        0.50 * adaptation_score +
-        0.30 * non_perseveration_score +
+        0.50 * adaptation_result["adaptation_score"] +
+        0.30 * adaptation_result["non_perseveration_score"] +
         0.20 * context_score
-    ) * length_penalty
-    
+    )
     return round(composite, 4)
 
 
 # ============================================================
-# MAIN EVALUATION LOOP (for local testing)
+# MAIN EVALUATION FUNCTION
 # ============================================================
 
-def evaluate_response(scenario: dict, phase1_response: str, phase2_response: str) -> dict:
+def evaluate_response(
+    scenario: dict,
+    phase1_response: str,
+    phase2_response: str,
+) -> dict:
     """
-    Full evaluation of a model's responses to a single scenario.
-    
+    Full evaluation of a model's responses to a single ADAPT-IQ scenario.
+
     Args:
-        scenario: The scenario dict from the dataset
-        phase1_response: The model's response to the initial prompt
-        phase2_response: The model's response after the disruptive context injection
-    
+        scenario        : The scenario dict from adapt_iq_dataset.json
+        phase1_response : The model's response to the initial prompt
+        phase2_response : The model's response after the disruptive context injection
+
     Returns:
-        Evaluation result dict
+        A result dict containing the composite score, all sub-scores, and
+        diagnostic metadata for analysis.
     """
     adaptation_result = check_adaptation_score(phase2_response, scenario)
-    context_acknowledged = check_context_acknowledgment(phase2_response, scenario)
-    
-    composite_score = compute_composite_score(
-        adaptation_result,
-        context_acknowledged,
-        len(phase2_response)
-    )
-    
+    context_score     = check_context_acknowledgment(phase2_response, scenario)
+    composite_score   = compute_composite_score(adaptation_result, context_score)
+
     return {
-        "scenario_id": scenario["scenario_id"],
-        "domain": scenario["domain"],
-        "difficulty": scenario["difficulty"],
-        "composite_score": composite_score,
-        "adaptation_passed": adaptation_result["adaptation_passed"],
-        "non_perseveration_passed": adaptation_result["non_perseveration_passed"],
-        "context_acknowledged": context_acknowledged,
-        "success_criteria_matched": adaptation_result["success_criteria_count"],
-        "total_success_criteria": adaptation_result["total_success_criteria"],
+        # Identity
+        "scenario_id":                scenario["scenario_id"],
+        "domain":                     scenario["domain"],
+        "difficulty":                 scenario["difficulty"],
+        # Scores
+        "composite_score":            composite_score,
+        "adaptation_score":           adaptation_result["adaptation_score"],
+        "non_perseveration_score":    adaptation_result["non_perseveration_score"],
+        "context_acknowledgment":     context_score,
+        # Boolean pass/fail for quick filtering
+        "adaptation_passed":          adaptation_result["adaptation_passed"],
+        "non_perseveration_passed":   adaptation_result["non_perseveration_passed"],
+        "context_acknowledged":       context_score == 1.0,
+        # Diagnostic detail
+        "success_criteria_matched":   adaptation_result["success_criteria_count"],
+        "total_success_criteria":     adaptation_result["total_success_criteria"],
         "failure_criteria_triggered": len(adaptation_result["failure_criteria_matched"]),
-        "phase2_response_length": len(phase2_response),
-        "details": adaptation_result
+        "failure_criteria_list":      adaptation_result["failure_criteria_matched"],
+        "phase2_response_length":     len(phase2_response),
     }
 
 
-def run_benchmark_on_model(model_fn, dataset_path: str, output_path: str = None):
+# ============================================================
+# BENCHMARK RUNNER (for local testing and CLI use)
+# ============================================================
+
+def run_benchmark_on_model(
+    model_fn,
+    dataset_path: str,
+    output_path: str = None,
+) -> dict:
     """
     Run the full ADAPT-IQ benchmark on a model.
-    
+
     Args:
-        model_fn: A callable that takes a list of messages and returns a string response
-        dataset_path: Path to the adapt_iq_dataset.json file
-        output_path: Optional path to save results JSON
-    
+        model_fn      : Callable that takes a list of message dicts and returns a str
+        dataset_path  : Path to adapt_iq_dataset.json
+        output_path   : Optional path to save results JSON
+
     Returns:
-        Aggregated benchmark results
+        Aggregated benchmark results dict with per-domain and per-difficulty breakdowns.
     """
     with open(dataset_path) as f:
         scenarios = json.load(f)
-    
+
     results = []
-    
+
     for i, scenario in enumerate(scenarios):
-        print(f"Evaluating scenario {i+1}/{len(scenarios)}: {scenario['scenario_id']}")
-        
-        # Phase 1: Initial problem
+        print(f"  [{i+1:3d}/{len(scenarios)}] {scenario['scenario_id']} "
+              f"({scenario['domain']}, {scenario['difficulty']})", end="", flush=True)
+
+        # ── Phase 1 ──────────────────────────────────────────────────────────
         messages = build_conversation(scenario)
         phase1_response = model_fn(messages)
-        
-        # Phase 2: Disruptive context injection
+
+        # ── Phase 2 ──────────────────────────────────────────────────────────
         messages.append({"role": "assistant", "content": phase1_response})
         messages.append(build_phase2_message(scenario))
         phase2_response = model_fn(messages)
-        
-        # Evaluate
+
+        # ── Score ─────────────────────────────────────────────────────────────
         result = evaluate_response(scenario, phase1_response, phase2_response)
         results.append(result)
-    
-    # Aggregate results
-    total_scenarios = len(results)
-    avg_composite = sum(r["composite_score"] for r in results) / total_scenarios
-    adaptation_rate = sum(1 for r in results if r["adaptation_passed"]) / total_scenarios
-    non_perseveration_rate = sum(1 for r in results if r["non_perseveration_passed"]) / total_scenarios
-    context_ack_rate = sum(1 for r in results if r["context_acknowledged"]) / total_scenarios
-    
+        print(f"  score={result['composite_score']:.3f}")
+
+    # ── Aggregate ─────────────────────────────────────────────────────────────
+    n = len(results)
+    avg_composite         = round(sum(r["composite_score"] for r in results) / n, 4)
+    adaptation_rate       = round(sum(1 for r in results if r["adaptation_passed"]) / n, 4)
+    non_perseveration_rate= round(sum(1 for r in results if r["non_perseveration_passed"]) / n, 4)
+    context_ack_rate      = round(sum(1 for r in results if r["context_acknowledged"]) / n, 4)
+
     # Domain breakdown
     domain_scores = {}
     for r in results:
-        d = r["domain"]
-        if d not in domain_scores:
-            domain_scores[d] = []
-        domain_scores[d].append(r["composite_score"])
-    
-    domain_averages = {d: round(sum(scores)/len(scores), 4) 
-                       for d, scores in domain_scores.items()}
-    
+        domain_scores.setdefault(r["domain"], []).append(r["composite_score"])
+    domain_averages = {d: round(sum(s)/len(s), 4) for d, s in domain_scores.items()}
+
     # Difficulty breakdown
     difficulty_scores = {}
     for r in results:
-        diff = r["difficulty"]
-        if diff not in difficulty_scores:
-            difficulty_scores[diff] = []
-        difficulty_scores[diff].append(r["composite_score"])
-    
-    difficulty_averages = {d: round(sum(scores)/len(scores), 4) 
-                           for d, scores in difficulty_scores.items()}
-    
+        difficulty_scores.setdefault(r["difficulty"], []).append(r["composite_score"])
+    difficulty_averages = {d: round(sum(s)/len(s), 4) for d, s in difficulty_scores.items()}
+
     aggregated = {
-        "benchmark": "ADAPT-IQ",
-        "total_scenarios": total_scenarios,
-        "overall_composite_score": round(avg_composite, 4),
-        "adaptation_rate": round(adaptation_rate, 4),
-        "non_perseveration_rate": round(non_perseveration_rate, 4),
-        "context_acknowledgment_rate": round(context_ack_rate, 4),
-        "domain_scores": domain_averages,
-        "difficulty_scores": difficulty_averages,
-        "per_scenario_results": results
+        "benchmark":              TASK_NAME,
+        "version":                TASK_VERSION,
+        "total_scenarios":        n,
+        "average_composite_score": avg_composite,
+        "adaptation_rate":        adaptation_rate,
+        "non_perseveration_rate": non_perseveration_rate,
+        "context_acknowledgment_rate": context_ack_rate,
+        "domain_averages":        domain_averages,
+        "difficulty_averages":    difficulty_averages,
+        "individual_results":     results,
     }
-    
+
     if output_path:
         with open(output_path, "w") as f:
             json.dump(aggregated, f, indent=2)
         print(f"\nResults saved to {output_path}")
-    
+
     print(f"\n{'='*50}")
-    print(f"ADAPT-IQ BENCHMARK RESULTS")
+    print(f"ADAPT-IQ Results Summary")
+    print(f"  Average Composite Score: {avg_composite:.4f}")
+    print(f"  Adaptation Rate:         {adaptation_rate:.4f}")
+    print(f"  Non-Perseveration Rate:  {non_perseveration_rate:.4f}")
+    print(f"  Context Ack Rate:        {context_ack_rate:.4f}")
+    print(f"\nDomain Averages:")
+    for domain, avg in sorted(domain_averages.items()):
+        print(f"  {domain:<35} {avg:.4f}")
+    print(f"\nDifficulty Averages:")
+    for diff, avg in sorted(difficulty_averages.items()):
+        print(f"  {diff:<10} {avg:.4f}")
     print(f"{'='*50}")
-    print(f"Overall Composite Score: {avg_composite:.4f}")
-    print(f"Adaptation Rate: {adaptation_rate:.2%}")
-    print(f"Non-Perseveration Rate: {non_perseveration_rate:.2%}")
-    print(f"Context Acknowledgment Rate: {context_ack_rate:.2%}")
-    print(f"\nDomain Scores:")
-    for domain, score in domain_averages.items():
-        print(f"  {domain}: {score:.4f}")
-    print(f"\nDifficulty Scores:")
-    for diff, score in difficulty_averages.items():
-        print(f"  {diff}: {score:.4f}")
-    
+
     return aggregated
-
-
-if __name__ == "__main__":
-    # Demo: Test the evaluation functions with a sample response
-    import sys
-    sys.path.insert(0, "/home/ubuntu/adapt_iq")
-    
-    with open("/home/ubuntu/adapt_iq/data/adapt_iq_dataset.json") as f:
-        scenarios = json.load(f)
-    
-    # Test with a mock "good" response for RM-001
-    test_scenario = scenarios[0]
-    
-    mock_phase2_good = """
-    Given the chemical contamination affecting 40% of the reservoir, I must completely revise my plan.
-    
-    The effective usable capacity is now only 36% (60% × 0.6 = 36%), which represents a critical shortage.
-    
-    Emergency Actions:
-    1. Immediately halt all agricultural water use from the contaminated supply
-    2. Activate emergency water trucking from neighboring municipalities
-    3. Contact state emergency management for desalination unit deployment
-    4. Issue a boil-water advisory for all residents
-    5. Prioritize drinking water for the 500,000 residents above all other uses
-    
-    Alternative Sources:
-    - Emergency water trucking: 2 million liters/day capacity
-    - Neighboring municipality transfer agreement: activate immediately
-    - Mobile desalination units: request 3 units from state emergency reserves
-    
-    The contaminated 40% must be isolated and remediation begun immediately.
-    """
-    
-    mock_phase2_bad = """
-    My original water conservation plan remains appropriate. The reservoir is at 60% capacity,
-    which gives us sufficient buffer for the 3-month drought period. I recommend the original
-    conservation measures: reducing residential use by 15%, limiting agricultural irrigation
-    to off-peak hours, and public awareness campaigns.
-    """
-    
-    print("Testing GOOD response:")
-    result_good = evaluate_response(test_scenario, "initial response", mock_phase2_good)
-    print(f"  Composite Score: {result_good['composite_score']}")
-    print(f"  Adaptation Passed: {result_good['adaptation_passed']}")
-    print(f"  Non-Perseveration Passed: {result_good['non_perseveration_passed']}")
-    
-    print("\nTesting BAD response (perseveration):")
-    result_bad = evaluate_response(test_scenario, "initial response", mock_phase2_bad)
-    print(f"  Composite Score: {result_bad['composite_score']}")
-    print(f"  Adaptation Passed: {result_bad['adaptation_passed']}")
-    print(f"  Non-Perseveration Passed: {result_bad['non_perseveration_passed']}")
