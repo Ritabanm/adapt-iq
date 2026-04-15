@@ -14,11 +14,10 @@ This benchmark directly targets the **Executive Functions** track, specifically 
 
 ## The Benchmark Flow
 
-ADAPT-IQ operates in a multi-turn conversational format across three phases:
+ADAPT-IQ operates in a multi-turn conversational format across two phases:
 
 1. **Phase 1 (Initial Problem):** The model is presented with a complex, open-ended problem across one of six domains and asked to generate a solution.
-2. **Phase 2 (Context Injection):** The model is presented with a disruptive piece of new information (e.g., a critical material becomes unavailable, a budget is slashed, the domain shifts).
-3. **Phase 3 (Adaptive Resolution):** The model must generate a revised solution that accommodates the new context.
+2. **Phase 2 (Context Injection & Adaptive Resolution):** The model is presented with a disruptive piece of new information (e.g., a critical material becomes unavailable, a budget is slashed, the domain shifts). The model must generate a revised solution that accommodates the new context.
 
 ## Evaluation Metrics
 
@@ -32,15 +31,21 @@ The Kaggle Benchmarks SDK implementation automates this multi-turn interaction. 
 
 *   `task.py`: The core Kaggle Benchmarks SDK task implementation containing the multi-turn logic and regex-based evaluation scoring.
 *   `benchmark.py`: The Kaggle Benchmarks SDK runner definition.
-*   `data/adapt_iq_dataset.json`: The 60 hand-crafted, synthetic scenarios across 6 domains (Resource Management, Social Dynamics, Engineering & Design, Scientific Reasoning, Creative Problem Solving, Cross-Domain Adaptation).
-*   `adapt_iq_evaluation_notebook.py`: The evaluation script used to run the benchmark against frontier models via API.
-*   `data/evaluation_results.json`: The raw output scores from our evaluation runs.
+*   `data/adapt_iq_dataset.json`: The 100 hand-crafted, synthetic scenarios across 6 domains (Resource Management, Social Dynamics, Engineering & Design, Scientific Reasoning, Creative Problem Solving, Cross-Domain Adaptation) and 3 difficulty levels.
+*   `ADAPT_IQ_Notebook.ipynb`: The evaluation notebook used to run the benchmark against frontier models via paid APIs.
+*   `ADAPT_IQ_Free_Notebook.ipynb`: A self-contained evaluation notebook that runs on free APIs (Groq, Google AI Studio, HuggingFace).
+*   `scripts/`: Internal build and generation scripts.
 
 ## Results & Insights
 
-We evaluated ADAPT-IQ across frontier models (GPT-4.1-mini, GPT-4.1-nano, Gemini-2.5-Flash) and weaker baselines (GPT-3.5-turbo, GPT-2) to validate discriminatory power.
+We evaluated ADAPT-IQ across frontier models (GPT-4.1-nano, GPT-4.1-mini, Gemini-2.5-Flash) on the full 100-scenario dataset.
 
-**Key Finding: Cognitive Inertia Exists.** Weaker models exhibit severe cognitive inertia. When presented with disruptive context, they often acknowledge the new information in their preamble but proceed to output their Phase 1 solution with minor cosmetic changes — failing the non-perseveration metric. The benchmark provides a clear performance gradient from 0.217 to 0.975, making it a strong discriminator across model capability tiers.
+**Results:**
+*   **GPT-4.1-nano:** 0.840
+*   **GPT-4.1-mini:** 0.833
+*   **Gemini-2.5-Flash:** 0.822
+
+**Key Finding: The "Easy Paradox".** We discovered a counterintuitive phenomenon where models score lower on "easy" scenarios (mean 0.677) than on "hard" scenarios (mean 0.874). This suggests that models exhibit stronger cognitive inertia when dealing with familiar, well-trodden problems, struggling to break out of their crystallized patterns when a simple constraint is introduced.
 
 ## Usage
 
@@ -53,4 +58,4 @@ python benchmark.py
 
 ## License
 
-CCO
+CC0 1.0 Universal (Public Domain)
