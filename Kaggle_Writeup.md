@@ -27,7 +27,7 @@ The Kaggle Benchmarks SDK implementation automates this multi-turn interaction a
 ### Dataset
 The full ADAPT-IQ dataset consists of **100 high-quality, hand-crafted scenarios** designed to isolate cognitive flexibility. The data is entirely synthetic and authored specifically for this benchmark to prevent data contamination in frontier models.
 
-**Provenance:** Authored by domain experts across six distinct fields.
+**Provenance:** Authored synthetically using frontier models and validated for logical consistency.
 **Sample Size:** 100 scenarios (16-17 per domain).
 **Data Types:** JSON format containing text prompts and regex evaluation criteria.
 
@@ -67,15 +67,10 @@ We evaluated ADAPT-IQ across frontier models on the full 100-scenario dataset to
 - **GPT-4o**: PASS
 - **Gemini 2.5 Flash**: PASS
 
-**What unique insights did we learn?**
+**Key Insights:**
 1. **Cognitive Inertia Exists:** Even frontier models exhibit "cognitive inertia." When presented with disruptive context, they sometimes acknowledge the new information in their preamble but proceed to output their exact Phase 1 solution with minor cosmetic changes. They fail the non-perseveration metric.
 2. **Domain-Specific Rigidity:** Models show varying flexibility across domains. For example, models adapt well in "Engineering & Design" but struggle in "Creative Problem Solving" where they must pivot creatively rather than mathematically.
 3. **The "Easy" Paradox:** Counterintuitively, models often score lower on "easy" scenarios (mean 0.677) than on "hard" scenarios (mean 0.874). Hard scenarios involve catastrophic shifts that force a complete rewrite, which models handle well. Easy scenarios require subtle, nuanced pivots to an existing plan, where models are more likely to perseverate on their original logic.
-
-![Model Comparison](data/figure1_model_comparison.png)
-![Domain Performance Heatmap](data/figure2_domain_heatmap.png)
-![Discriminatory Power](data/figure3_discriminatory_power.png)
-![Difficulty Analysis](data/figure4_difficulty_analysis.png)
 
 **Conclusion:** ADAPT-IQ successfully isolates the Executive Function of cognitive flexibility. It proves that while frontier models possess vast crystallized knowledge, their fluid intelligence—their ability to improvise and overcome unexpected context shifts—remains a measurable frontier for AGI development [3] [4].
 
